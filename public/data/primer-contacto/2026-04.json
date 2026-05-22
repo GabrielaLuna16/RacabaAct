@@ -1,0 +1,204 @@
+{
+  "month": "2026-04",
+  "label": "Abril 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "total": 106,
+      "a_tiempo": 99,
+      "cierre_tardio": 7,
+      "no_realizada": 0,
+      "pct_a_tiempo": 93,
+      "pct_tardio": 7,
+      "pct_no_realizada": 0,
+      "mediana_horas": 6.61,
+      "tardio_detail": [
+        {
+          "contacto": "Marina Cordova",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 16:24",
+          "cerrado": "12/04/2026, 12:56"
+        },
+        {
+          "contacto": "Marcos Pozos",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "02/04/2026, 12:46",
+          "cerrado": "03/04/2026, 11:12"
+        },
+        {
+          "contacto": "Brittany Colon",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "03/04/2026, 14:32",
+          "cerrado": "04/04/2026, 13:54"
+        },
+        {
+          "contacto": "Jesús .....",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "01/04/2026, 16:46",
+          "cerrado": "02/04/2026, 11:22"
+        },
+        {
+          "contacto": "Ana Sheccid",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 05:08",
+          "cerrado": "12/04/2026, 13:21"
+        },
+        {
+          "contacto": "Luis Cuellar",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "04/04/2026, 14:39",
+          "cerrado": "05/04/2026, 20:48"
+        },
+        {
+          "contacto": "Alonso Mendoza",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "04/04/2026, 15:40",
+          "cerrado": "05/04/2026, 20:42"
+        }
+      ]
+    },
+    "Gladys Favela": {
+      "total": 24,
+      "a_tiempo": 12,
+      "cierre_tardio": 12,
+      "no_realizada": 0,
+      "pct_a_tiempo": 50,
+      "pct_tardio": 50,
+      "pct_no_realizada": 0,
+      "mediana_horas": 25.06,
+      "tardio_detail": [
+        {
+          "contacto": "Verónica Ramírez Suárez",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 21:17",
+          "cerrado": "13/04/2026, 17:23"
+        },
+        {
+          "contacto": "Diana Rios",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "18/04/2026, 19:57",
+          "cerrado": "20/04/2026, 09:53"
+        },
+        {
+          "contacto": "Pedro Carreón",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "24/04/2026, 10:02",
+          "cerrado": "25/04/2026, 09:35"
+        },
+        {
+          "contacto": "Rossy Arreola",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "21/04/2026, 14:19",
+          "cerrado": "22/04/2026, 09:46"
+        },
+        {
+          "contacto": "Diana Terán",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "10/04/2026, 08:35",
+          "cerrado": "14/04/2026, 09:33"
+        },
+        {
+          "contacto": "Rober Reyes",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "07/04/2026, 12:22",
+          "cerrado": "08/04/2026, 14:23"
+        },
+        {
+          "contacto": "Madrid Beauty Room",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 22:24",
+          "cerrado": "13/04/2026, 17:19"
+        },
+        {
+          "contacto": "Nancy Orozco",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "23/04/2026, 10:12",
+          "cerrado": "25/04/2026, 09:33"
+        },
+        {
+          "contacto": "Miriam Chavez Cueva",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 17:16",
+          "cerrado": "13/04/2026, 09:33"
+        },
+        {
+          "contacto": "Claudia Martínez",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "21/04/2026, 09:17",
+          "cerrado": "22/04/2026, 09:22"
+        },
+        {
+          "contacto": "Jesus Espinoza",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "10/04/2026, 00:32",
+          "cerrado": "11/04/2026, 10:20"
+        },
+        {
+          "contacto": "Veronica Martinez",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 21:33",
+          "cerrado": "13/04/2026, 17:25"
+        }
+      ]
+    },
+    "Erick Suarez": {
+      "total": 34,
+      "a_tiempo": 32,
+      "cierre_tardio": 2,
+      "no_realizada": 0,
+      "pct_a_tiempo": 94,
+      "pct_tardio": 6,
+      "pct_no_realizada": 0,
+      "mediana_horas": 4.93,
+      "tardio_detail": [
+        {
+          "contacto": "Patricia Montes",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "09/04/2026, 08:39",
+          "cerrado": "11/04/2026, 14:02"
+        },
+        {
+          "contacto": "Hector Sambucetti",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "05/04/2026, 15:14",
+          "cerrado": "06/04/2026, 09:38"
+        }
+      ]
+    },
+    "Indira Villegas": {
+      "total": 54,
+      "a_tiempo": 50,
+      "cierre_tardio": 4,
+      "no_realizada": 0,
+      "pct_a_tiempo": 93,
+      "pct_tardio": 7,
+      "pct_no_realizada": 0,
+      "mediana_horas": 0.43,
+      "tardio_detail": [
+        {
+          "contacto": "Edward Hucher",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 00:35",
+          "cerrado": "12/04/2026, 10:38"
+        },
+        {
+          "contacto": "Shirley Gimenez",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "11/04/2026, 13:12",
+          "cerrado": "12/04/2026, 10:37"
+        },
+        {
+          "contacto": "Roberto y Claudia López",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "03/04/2026, 16:33",
+          "cerrado": "04/04/2026, 09:48"
+        },
+        {
+          "contacto": "Ismael Gutiérrez del Muro",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "04/04/2026, 10:15",
+          "cerrado": "05/04/2026, 14:45"
+        }
+      ]
+    }
+  }
+}

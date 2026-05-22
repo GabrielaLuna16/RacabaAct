@@ -1,0 +1,572 @@
+{
+  "month": "2026-04",
+  "label": "Abril 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "actividades": {
+        "total": 116,
+        "a_tiempo": 111,
+        "cierre_tardio": 5,
+        "no_realizada": 0,
+        "pct_a_tiempo": 96,
+        "pct_tardio": 4,
+        "pct_no_realizada": 0,
+        "mediana_horas": 12.57,
+        "tardio_detail": [
+          {
+            "contacto": "Erik Liera",
+            "tarea": "Seguir Contactando",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 12:16"
+          },
+          {
+            "contacto": "Gerardo Rodriguez",
+            "tarea": "Seguir Contactando",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 12:27"
+          },
+          {
+            "contacto": "Sundar (hindu) hindu",
+            "tarea": "Reunión",
+            "due_date": "15/04/2026",
+            "cerrado": "18/04/2026, 18:03"
+          },
+          {
+            "contacto": "Alejandro Michel",
+            "tarea": "Seguir Contactando",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 12:16"
+          },
+          {
+            "contacto": "Aldo Mata",
+            "tarea": "Seguir Contactando",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 12:24"
+          }
+        ]
+      },
+      "llamadas": {
+        "total": 244,
+        "a_tiempo": 241,
+        "cierre_tardio": 3,
+        "no_realizada": 0,
+        "pct_a_tiempo": 99,
+        "pct_tardio": 1,
+        "pct_no_realizada": 0,
+        "mediana_horas": 11.67,
+        "tardio_detail": [
+          {
+            "contacto": "Axel Velazquez",
+            "tarea": "Llamada",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 11:55"
+          },
+          {
+            "contacto": "DrJoseph Hdz",
+            "tarea": "Llamada",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 11:45"
+          },
+          {
+            "contacto": "Zaid Herrera",
+            "tarea": "Llamada",
+            "due_date": "11/04/2026",
+            "cerrado": "12/04/2026, 11:44"
+          }
+        ]
+      }
+    },
+    "Gladys Favela": {
+      "total": 69,
+      "a_tiempo": 55,
+      "cierre_tardio": 14,
+      "no_realizada": 0,
+      "pct_a_tiempo": 80,
+      "pct_tardio": 20,
+      "pct_no_realizada": 0,
+      "mediana_horas": 16.97,
+      "tardio_detail": [
+        {
+          "contacto": "Miriam Chavez Cueva",
+          "tarea": "Seguimiento 1",
+          "due_date": "16/04/2026",
+          "cerrado": "21/04/2026, 12:42"
+        },
+        {
+          "contacto": "Miriam Chavez Cueva",
+          "tarea": "Seguimiento 2",
+          "due_date": "25/04/2026",
+          "cerrado": "29/04/2026, 15:26"
+        },
+        {
+          "contacto": "Jean carlo Carrillo",
+          "tarea": "Seguir Contactando",
+          "due_date": "13/04/2026",
+          "cerrado": "20/04/2026, 11:22"
+        },
+        {
+          "contacto": "Pedro Lopez",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "07/04/2026, 13:52"
+        },
+        {
+          "contacto": "Jesus Espinoza",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "19/04/2026",
+          "cerrado": "20/04/2026, 09:56"
+        },
+        {
+          "contacto": "Christian Alain Campos Ríos",
+          "tarea": "Seguimiento 2",
+          "due_date": "03/04/2026",
+          "cerrado": "15/04/2026, 09:14"
+        },
+        {
+          "contacto": "Diana Rios",
+          "tarea": "Seguir Contactando",
+          "due_date": "24/04/2026",
+          "cerrado": "25/04/2026, 09:38"
+        },
+        {
+          "contacto": "Christian Alain Campos Ríos",
+          "tarea": "Seguimiento 1",
+          "due_date": "16/04/2026",
+          "cerrado": "20/04/2026, 09:11"
+        },
+        {
+          "contacto": "Isis Lara",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "13/04/2026",
+          "cerrado": "14/04/2026, 09:27"
+        },
+        {
+          "contacto": "Rober Reyes",
+          "tarea": "Seguimiento 1",
+          "due_date": "16/04/2026",
+          "cerrado": "21/04/2026, 12:40"
+        },
+        {
+          "contacto": "Rober Reyes",
+          "tarea": "Seguimiento 2",
+          "due_date": "25/04/2026",
+          "cerrado": "26/04/2026, 13:15"
+        },
+        {
+          "contacto": "David Ramos VERDUZCO",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "07/04/2026, 13:54"
+        },
+        {
+          "contacto": "Héctor Aguilar",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "24/04/2026",
+          "cerrado": "25/04/2026, 09:42"
+        },
+        {
+          "contacto": "Jr Yuliana VE",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "07/04/2026, 13:34"
+        }
+      ]
+    },
+    "Erick Suarez": {
+      "total": 103,
+      "a_tiempo": 92,
+      "cierre_tardio": 11,
+      "no_realizada": 0,
+      "pct_a_tiempo": 89,
+      "pct_tardio": 11,
+      "pct_no_realizada": 0,
+      "mediana_horas": 11.32,
+      "tardio_detail": [
+        {
+          "contacto": "Whitney Pavich de Sanchez",
+          "tarea": "Seguir Contactando",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 16:30"
+        },
+        {
+          "contacto": "Ruben Valdez",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "29/04/2026",
+          "cerrado": "02/05/2026, 10:46"
+        },
+        {
+          "contacto": "Carlos Rimoli",
+          "tarea": "Seguir Contactando",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:30"
+        },
+        {
+          "contacto": "Karla Acosta",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:58"
+        },
+        {
+          "contacto": "Ruben Valdez",
+          "tarea": "Seguir Contactando",
+          "due_date": "14/04/2026",
+          "cerrado": "17/04/2026, 15:40"
+        },
+        {
+          "contacto": "Bisher Takriti",
+          "tarea": "Seguir Contactando",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:16"
+        },
+        {
+          "contacto": "Hector Sambucetti",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:59"
+        },
+        {
+          "contacto": "El bicho Siuu",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:51"
+        },
+        {
+          "contacto": "Cristobal Martinez",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:53"
+        },
+        {
+          "contacto": "Art Torres",
+          "tarea": "Seguir Contactando",
+          "due_date": "15/04/2026",
+          "cerrado": "17/04/2026, 15:56"
+        },
+        {
+          "contacto": "Adam. Navarro Navarro",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "03/04/2026",
+          "cerrado": "04/04/2026, 11:06"
+        }
+      ]
+    },
+    "Indira Villegas": {
+      "total": 134,
+      "a_tiempo": 83,
+      "cierre_tardio": 51,
+      "no_realizada": 0,
+      "pct_a_tiempo": 62,
+      "pct_tardio": 38,
+      "pct_no_realizada": 0,
+      "mediana_horas": 16.35,
+      "tardio_detail": [
+        {
+          "contacto": "Leticia Rosas",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "06/04/2026",
+          "cerrado": "08/04/2026, 16:21"
+        },
+        {
+          "contacto": "Gabriel suareZ",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "08/04/2026",
+          "cerrado": "09/04/2026, 13:56"
+        },
+        {
+          "contacto": "Maribel Stinson",
+          "tarea": "Seguimiento",
+          "due_date": "02/04/2026",
+          "cerrado": "06/04/2026, 13:23"
+        },
+        {
+          "contacto": "‍Marcos Maximiliano Nieto Reyes",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "15/04/2026, 12:24"
+        },
+        {
+          "contacto": "Jesus Andres Merienne",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "23/04/2026",
+          "cerrado": "24/04/2026, 16:30"
+        },
+        {
+          "contacto": "Carlos giovanni Sanchez",
+          "tarea": "Seguir Contactando",
+          "due_date": "14/04/2026",
+          "cerrado": "17/04/2026, 15:08"
+        },
+        {
+          "contacto": "Ma Salas",
+          "tarea": "Seguimiento 1",
+          "due_date": "18/04/2026",
+          "cerrado": "19/04/2026, 11:35"
+        },
+        {
+          "contacto": "Gerardo Nuno",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "03/04/2026",
+          "cerrado": "09/04/2026, 14:51"
+        },
+        {
+          "contacto": "Felipe Molina",
+          "tarea": "Seguimiento 2",
+          "due_date": "13/04/2026",
+          "cerrado": "16/04/2026, 15:27"
+        },
+        {
+          "contacto": "Claudia Garcia",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "13/04/2026",
+          "cerrado": "15/04/2026, 12:07"
+        },
+        {
+          "contacto": "Charlie Ai",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "06/04/2026",
+          "cerrado": "09/04/2026, 16:47"
+        },
+        {
+          "contacto": "Valeria Velazquez",
+          "tarea": "Seguimiento",
+          "due_date": "03/04/2026",
+          "cerrado": "06/04/2026, 14:54"
+        },
+        {
+          "contacto": "Elwe Rito",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "16/04/2026, 11:03"
+        },
+        {
+          "contacto": "Felipe Molina",
+          "tarea": "Seguimiento 1",
+          "due_date": "03/04/2026",
+          "cerrado": "12/04/2026, 14:41"
+        },
+        {
+          "contacto": "Eduardo Luquin Crediphone",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "06/04/2026, 15:26"
+        },
+        {
+          "contacto": "John zepeda",
+          "tarea": "Seguimiento 2",
+          "due_date": "03/04/2026",
+          "cerrado": "06/04/2026, 14:54"
+        },
+        {
+          "contacto": "Juan Meraz",
+          "tarea": "Seguimiento 3",
+          "due_date": "08/04/2026",
+          "cerrado": "16/04/2026, 16:50"
+        },
+        {
+          "contacto": "Karen Lizbeth Mendoza Diaz",
+          "tarea": "Seguir Contactando",
+          "due_date": "13/04/2026",
+          "cerrado": "15/04/2026, 10:11"
+        },
+        {
+          "contacto": "Ma Salas",
+          "tarea": "Seguimiento",
+          "due_date": "06/04/2026",
+          "cerrado": "09/04/2026, 16:11"
+        },
+        {
+          "contacto": "Shirley Gimenez",
+          "tarea": "Seguir Contactando",
+          "due_date": "15/04/2026",
+          "cerrado": "16/04/2026, 09:16"
+        },
+        {
+          "contacto": "Filipa De Castro",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "16/04/2026, 09:36"
+        },
+        {
+          "contacto": "Pedro Santana",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/04/2026",
+          "cerrado": "09/04/2026, 14:53"
+        },
+        {
+          "contacto": "Carlos Fernando Padilla Teran",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "04/04/2026",
+          "cerrado": "08/04/2026, 15:30"
+        },
+        {
+          "contacto": "Lauren y Thuan",
+          "tarea": "Seguimiento 3",
+          "due_date": "05/04/2026",
+          "cerrado": "12/04/2026, 14:39"
+        },
+        {
+          "contacto": "Arnoldo Rodríguez Camacho",
+          "tarea": "Seguir Contactando",
+          "due_date": "11/04/2026",
+          "cerrado": "12/04/2026, 11:12"
+        },
+        {
+          "contacto": "Hector Glez",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "14/04/2026",
+          "cerrado": "16/04/2026, 11:06"
+        },
+        {
+          "contacto": "Manuel Sanchez",
+          "tarea": "Seguimiento 1",
+          "due_date": "14/04/2026",
+          "cerrado": "16/04/2026, 11:41"
+        },
+        {
+          "contacto": "Marcela Morelos",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "06/04/2026, 15:20"
+        },
+        {
+          "contacto": "Ivonne Cuellar",
+          "tarea": "Seguir Contactando",
+          "due_date": "11/04/2026",
+          "cerrado": "16/04/2026, 11:34"
+        },
+        {
+          "contacto": "Jose luis Tunas rodriguez",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "14/04/2026",
+          "cerrado": "16/04/2026, 11:13"
+        },
+        {
+          "contacto": "Jose luis Tunas rodriguez",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/04/2026",
+          "cerrado": "09/04/2026, 14:54"
+        },
+        {
+          "contacto": "Gustavo H Hernandez Martinez",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "13/04/2026",
+          "cerrado": "15/04/2026, 12:00"
+        },
+        {
+          "contacto": "Bernardo Ramirez",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/04/2026",
+          "cerrado": "06/04/2026, 15:23"
+        },
+        {
+          "contacto": "Guillermo Balderas",
+          "tarea": "Seguimiento 1",
+          "due_date": "03/04/2026",
+          "cerrado": "16/04/2026, 15:39"
+        },
+        {
+          "contacto": "Ismael Gutiérrez del Muro",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/04/2026",
+          "cerrado": "09/04/2026, 14:05"
+        },
+        {
+          "contacto": "Hector Glez",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "23/04/2026",
+          "cerrado": "24/04/2026, 16:31"
+        },
+        {
+          "contacto": "Alfredo Isleño Gonzalez",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "15/04/2026, 11:10"
+        },
+        {
+          "contacto": "Ma Salas",
+          "tarea": "Seguimiento 2",
+          "due_date": "23/04/2026",
+          "cerrado": "24/04/2026, 11:37"
+        },
+        {
+          "contacto": "Pablo Sergio Aispuro Cárdenas",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "23/04/2026",
+          "cerrado": "24/04/2026, 09:33"
+        },
+        {
+          "contacto": "Charlie Ai",
+          "tarea": "Llamar",
+          "due_date": "10/04/2026",
+          "cerrado": "16/04/2026, 11:00"
+        },
+        {
+          "contacto": "Hector Glez",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/04/2026",
+          "cerrado": "09/04/2026, 14:15"
+        },
+        {
+          "contacto": "Gilberto Montoya",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "03/04/2026",
+          "cerrado": "06/04/2026, 13:09"
+        },
+        {
+          "contacto": "Elwe Rito",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "06/04/2026",
+          "cerrado": "09/04/2026, 14:44"
+        },
+        {
+          "contacto": "Oscar Guzman",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "15/04/2026, 10:21"
+        },
+        {
+          "contacto": "Psic Ye",
+          "tarea": "Seguir Contactando",
+          "due_date": "11/04/2026",
+          "cerrado": "12/04/2026, 11:25"
+        },
+        {
+          "contacto": "Silvyaa García",
+          "tarea": "Seguimiento 3",
+          "due_date": "06/04/2026",
+          "cerrado": "12/04/2026, 14:39"
+        },
+        {
+          "contacto": "JanMalVal Janett",
+          "tarea": "Seguir Contactando",
+          "due_date": "12/04/2026",
+          "cerrado": "15/04/2026, 10:15"
+        },
+        {
+          "contacto": "Jesus oscar verdugo ortega",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "13/04/2026",
+          "cerrado": "15/04/2026, 11:48"
+        },
+        {
+          "contacto": "Marwng MW",
+          "tarea": "Confirmar agenda de cita",
+          "due_date": "06/04/2026",
+          "cerrado": "09/04/2026, 14:50"
+        },
+        {
+          "contacto": "John zepeda",
+          "tarea": "Seguimiento 3",
+          "due_date": "13/04/2026",
+          "cerrado": "16/04/2026, 15:20"
+        },
+        {
+          "contacto": "Monica Chapa",
+          "tarea": "Seguir Contactando",
+          "due_date": "11/04/2026",
+          "cerrado": "12/04/2026, 10:52"
+        }
+      ]
+    }
+  }
+}

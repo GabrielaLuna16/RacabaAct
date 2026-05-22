@@ -1,0 +1,183 @@
+import { parseExcel, excelSerialToDate, median, formatDate, formatDateOnly, RawRow } from './excelUtils';
+
+const REST_DAYS: Record<string, number> = {
+  'Hugo Cordova': 2,    // martes
+  'Gladys Favela': 4,   // jueves
+  'Erick Suarez': 4,    // jueves
+  'Indira Villegas': 2, // martes
+};
+
+function addDays(d: Date, n: number): Date {
+  const r = new Date(d);
+  r.setUTCDate(r.getUTCDate() + n);
+  return r;
+}
+
+function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string): Date {
+  const restDay = REST_DAYS[advisor] ?? -1;
+  let effective = new Date(dueDate);
+
+  // Gladys special rule: only April 2026 — due dates 01-05 Apr → close by Apr 6 = a_tiempo
+  if (advisor === 'Gladys Favela' && monthStr === '2026-04') {
+    const m = effective.getUTCMonth(); // 3 = April
+    const d = effective.getUTCDate();
+    if (m === 3 && d >= 1 && d <= 5) {
+      return new Date(Date.UTC(2026, 3, 6)); // April 6, 2026
+    }
+  }
+
+  // If due date falls on rest day → extend to next day
+  if (effective.getUTCDay() === restDay) {
+    effective = addDays(effective, 1);
+  }
+
+  return effective;
+}
+
+export interface TardioDetailSeg {
+  contacto: string;
+  tarea: string;
+  due_date: string;
+  cerrado: string;
+}
+
+export interface SectionStats {
+  total: number;
+  a_tiempo: number;
+  cierre_tardio: number;
+  no_realizada: number;
+  pct_a_tiempo: number;
+  pct_tardio: number;
+  pct_no_realizada: number;
+  mediana_horas: number | null;
+  tardio_detail: TardioDetailSeg[];
+}
+
+export interface HugoAdvisorStats {
+  actividades: SectionStats;
+  llamadas: SectionStats;
+}
+
+export type AdvisorStatsSeg = SectionStats | HugoAdvisorStats;
+
+export interface SeguimientoData {
+  month: string;
+  label: string;
+  advisors: Record<string, AdvisorStatsSeg>;
+}
+
+function monthLabel(monthStr: string): string {
+  const [year, month] = monthStr.split('-');
+  const months = [
+    'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre',
+  ];
+  return `${months[parseInt(month, 10) - 1]} ${year}`;
+}
+
+const ADVISOR_ORDER = ['Hugo Cordova', 'Gladys Favela', 'Erick Suarez', 'Indira Villegas'];
+
+function emptySection(): { closingHours: number[]; counts: { a_tiempo: number; cierre_tardio: number; no_realizada: number }; tardio: TardioDetailSeg[] } {
+  return { closingHours: [], counts: { a_tiempo: 0, cierre_tardio: 0, no_realizada: 0 }, tardio: [] };
+}
+
+function buildStats(d: ReturnType<typeof emptySection>): SectionStats {
+  const total = d.counts.a_tiempo + d.counts.cierre_tardio + d.counts.no_realizada;
+  const pct = (n: number) => total > 0 ? Math.round((n / total) * 100) : 0;
+  return {
+    total,
+    a_tiempo: d.counts.a_tiempo,
+    cierre_tardio: d.counts.cierre_tardio,
+    no_realizada: d.counts.no_realizada,
+    pct_a_tiempo: pct(d.counts.a_tiempo),
+    pct_tardio: pct(d.counts.cierre_tardio),
+    pct_no_realizada: pct(d.counts.no_realizada),
+    mediana_horas: median(d.closingHours),
+    tardio_detail: d.tardio,
+  };
+}
+
+export function processSeguimiento(
+  opts: { filePath?: string; buffer?: ArrayBuffer | Buffer },
+  monthStr: string
+): SeguimientoData {
+  const rows: RawRow[] = parseExcel({ ...opts, headerRow: 7 });
+
+  const byAdvisor: Record<string, {
+    actividades: ReturnType<typeof emptySection>;
+    llamadas: ReturnType<typeof emptySection>;
+  }> = {};
+
+  for (const row of rows) {
+    const advisor = String(row['Task Owner'] ?? '').trim();
+    if (!advisor) continue;
+
+    const subject = String(row['Subject'] ?? '').trim();
+
+    // Exclude "Contactar Inmediato" tasks
+    if (/contactar\s+de?\s*inmediato/i.test(subject)) continue;
+
+    if (!byAdvisor[advisor]) {
+      byAdvisor[advisor] = { actividades: emptySection(), llamadas: emptySection() };
+    }
+
+    const isLlamada = /^llamada$/i.test(subject.trim());
+    const section = isLlamada ? byAdvisor[advisor].llamadas : byAdvisor[advisor].actividades;
+
+    const dueRaw = excelSerialToDate(row['Due Date']);
+    const closed = excelSerialToDate(row['Closed Time']);
+    const contact =
+      String(row['Related To'] ?? '').trim() ||
+      String(row['Contact Name'] ?? '').trim();
+
+    if (!dueRaw || !closed) {
+      section.counts.no_realizada++;
+      continue;
+    }
+
+    const dueDateOnly = new Date(Date.UTC(
+      dueRaw.getUTCFullYear(), dueRaw.getUTCMonth(), dueRaw.getUTCDate()
+    ));
+    const effectiveDue = getEffectiveDueDate(dueDateOnly, advisor, monthStr);
+    const closedDateOnly = new Date(Date.UTC(
+      closed.getUTCFullYear(), closed.getUTCMonth(), closed.getUTCDate()
+    ));
+
+    // Hours between dueDate (start of day) and closed
+    const hours = (closed.getTime() - dueDateOnly.getTime()) / 3600000;
+    if (hours >= 0) section.closingHours.push(hours);
+
+    if (closedDateOnly <= effectiveDue) {
+      section.counts.a_tiempo++;
+    } else {
+      section.counts.cierre_tardio++;
+      section.tardio.push({
+        contacto: contact,
+        tarea: subject,
+        due_date: formatDateOnly(dueDateOnly),
+        cerrado: formatDate(closed),
+      });
+    }
+  }
+
+  const advisors: Record<string, AdvisorStatsSeg> = {};
+
+  const orderedAdvisors = [
+    ...ADVISOR_ORDER.filter((a) => byAdvisor[a]),
+    ...Object.keys(byAdvisor).filter((a) => !ADVISOR_ORDER.includes(a)),
+  ];
+
+  for (const advisor of orderedAdvisors) {
+    const d = byAdvisor[advisor];
+    if (advisor === 'Hugo Cordova') {
+      advisors[advisor] = {
+        actividades: buildStats(d.actividades),
+        llamadas: buildStats(d.llamadas),
+      } as HugoAdvisorStats;
+    } else {
+      advisors[advisor] = buildStats(d.actividades);
+    }
+  }
+
+  return { month: monthStr, label: monthLabel(monthStr), advisors };
+}
