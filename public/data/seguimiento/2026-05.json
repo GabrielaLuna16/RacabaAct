@@ -1,0 +1,258 @@
+{
+  "month": "2026-05",
+  "label": "Mayo 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "actividades": {
+        "total": 73,
+        "a_tiempo": 61,
+        "cierre_tardio": 0,
+        "no_realizada": 12,
+        "pct_a_tiempo": 84,
+        "pct_tardio": 0,
+        "pct_no_realizada": 16,
+        "mediana_horas": 12.98,
+        "tardio_detail": []
+      },
+      "llamadas": {
+        "total": 198,
+        "a_tiempo": 147,
+        "cierre_tardio": 0,
+        "no_realizada": 51,
+        "pct_a_tiempo": 74,
+        "pct_tardio": 0,
+        "pct_no_realizada": 26,
+        "mediana_horas": 13.22,
+        "tardio_detail": []
+      }
+    },
+    "Gladys Favela": {
+      "total": 48,
+      "a_tiempo": 34,
+      "cierre_tardio": 5,
+      "no_realizada": 9,
+      "pct_a_tiempo": 71,
+      "pct_tardio": 10,
+      "pct_no_realizada": 19,
+      "mediana_horas": 11.84,
+      "tardio_detail": [
+        {
+          "contacto": "Hector Najera",
+          "tarea": "Seguimiento",
+          "due_date": "10/05/2026",
+          "cerrado": "11/05/2026, 11:13"
+        },
+        {
+          "contacto": "Carlos Gutierrez sandoval",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "20/05/2026",
+          "cerrado": "22/05/2026, 09:36"
+        },
+        {
+          "contacto": "Alejandro Castanedo",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "20/05/2026",
+          "cerrado": "22/05/2026, 09:43"
+        },
+        {
+          "contacto": "Natherrera Herrera",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "20/05/2026",
+          "cerrado": "22/05/2026, 09:40"
+        },
+        {
+          "contacto": "Juan Carlos",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "20/05/2026",
+          "cerrado": "22/05/2026, 09:39"
+        }
+      ]
+    },
+    "Erick Suarez": {
+      "total": 36,
+      "a_tiempo": 26,
+      "cierre_tardio": 4,
+      "no_realizada": 6,
+      "pct_a_tiempo": 72,
+      "pct_tardio": 11,
+      "pct_no_realizada": 17,
+      "mediana_horas": 13.72,
+      "tardio_detail": [
+        {
+          "contacto": "Cristinna Valle",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/05/2026",
+          "cerrado": "09/05/2026, 09:29"
+        },
+        {
+          "contacto": "Jorge isaac farrett Farrett",
+          "tarea": "Seguir Contactando",
+          "due_date": "09/05/2026",
+          "cerrado": "10/05/2026, 11:02"
+        },
+        {
+          "contacto": "Julio Sesar Limon Sanchez",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 11:09"
+        },
+        {
+          "contacto": "Carol Olona",
+          "tarea": "Seguir Contactando",
+          "due_date": "08/05/2026",
+          "cerrado": "09/05/2026, 09:30"
+        }
+      ]
+    },
+    "Indira Villegas": {
+      "total": 97,
+      "a_tiempo": 58,
+      "cierre_tardio": 23,
+      "no_realizada": 16,
+      "pct_a_tiempo": 60,
+      "pct_tardio": 24,
+      "pct_no_realizada": 16,
+      "mediana_horas": 15.03,
+      "tardio_detail": [
+        {
+          "contacto": "Zamir Sultani",
+          "tarea": "Seguimiento",
+          "due_date": "18/05/2026",
+          "cerrado": "20/05/2026, 09:32"
+        },
+        {
+          "contacto": "Mtra. Mística Talge Samaha",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "14/05/2026",
+          "cerrado": "16/05/2026, 16:28"
+        },
+        {
+          "contacto": "Jimmy Robert",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 12:59"
+        },
+        {
+          "contacto": "Marc Carlos",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 10:53"
+        },
+        {
+          "contacto": "Jesus Andres Merienne",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 10:54"
+        },
+        {
+          "contacto": "Lalis Loustaunau",
+          "tarea": "Seguir Contactando",
+          "due_date": "06/05/2026",
+          "cerrado": "07/05/2026, 09:11"
+        },
+        {
+          "contacto": "Irazú Orrantia",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "15/05/2026",
+          "cerrado": "16/05/2026, 15:58"
+        },
+        {
+          "contacto": "Carlos Sumohano Ballados",
+          "tarea": "Seguir Contactando",
+          "due_date": "09/05/2026",
+          "cerrado": "10/05/2026, 10:46"
+        },
+        {
+          "contacto": "Patricia y Jaime Sánchez",
+          "tarea": "Seguimiento",
+          "due_date": "15/05/2026",
+          "cerrado": "17/05/2026, 14:28"
+        },
+        {
+          "contacto": "Patricia Avelar",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "06/05/2026",
+          "cerrado": "07/05/2026, 09:16"
+        },
+        {
+          "contacto": "Lucila Elizabeth García Díaz",
+          "tarea": "Seguir Contactando",
+          "due_date": "16/05/2026",
+          "cerrado": "17/05/2026, 13:46"
+        },
+        {
+          "contacto": "Ma Salas",
+          "tarea": "Seguimiento 3",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 13:05"
+        },
+        {
+          "contacto": "Erika De la Mora",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 11:26"
+        },
+        {
+          "contacto": "Patricia y Jaime Sánchez",
+          "tarea": "Seguimiento 3",
+          "due_date": "09/05/2026",
+          "cerrado": "10/05/2026, 10:33"
+        },
+        {
+          "contacto": "Cirilo Metodio Noyola Noyola",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "17/05/2026",
+          "cerrado": "20/05/2026, 09:42"
+        },
+        {
+          "contacto": "Leonardo de la Mora",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "18/05/2026",
+          "cerrado": "20/05/2026, 09:16"
+        },
+        {
+          "contacto": "Jimmy Robert",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "09/05/2026",
+          "cerrado": "10/05/2026, 10:47"
+        },
+        {
+          "contacto": "Pablo Sergio Aispuro Cárdenas",
+          "tarea": "Seguir Contactando 3",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 10:43"
+        },
+        {
+          "contacto": "Carlos Sumohano Ballados",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "18/05/2026",
+          "cerrado": "20/05/2026, 16:47"
+        },
+        {
+          "contacto": "guatavo corrales wong",
+          "tarea": "Seguir Contactando",
+          "due_date": "06/05/2026",
+          "cerrado": "07/05/2026, 09:14"
+        },
+        {
+          "contacto": "Ray Ortiz",
+          "tarea": "Seguir Contactando",
+          "due_date": "03/05/2026",
+          "cerrado": "04/05/2026, 16:38"
+        },
+        {
+          "contacto": "Laura Elena Curiel",
+          "tarea": "Seguimiento 2",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 15:08"
+        },
+        {
+          "contacto": "Maria del Carmen Vazquez",
+          "tarea": "Seguir Contactando 2",
+          "due_date": "18/05/2026",
+          "cerrado": "20/05/2026, 09:17"
+        }
+      ]
+    }
+  }
+}
