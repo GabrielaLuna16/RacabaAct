@@ -54,7 +54,7 @@ export default function Dashboard() {
     <div className="min-h-screen bg-white">
       {/* Header */}
       <header className="border-b border-gray-100 bg-white sticky top-0 z-10">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div className="px-4 sm:px-8 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl font-bold tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
               RACABA
@@ -88,7 +88,7 @@ export default function Dashboard() {
 
       {/* Main tabs */}
       <div className="border-b border-gray-100 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <div className="px-4 sm:px-8">
           <div className="flex gap-0">
             {(['primer_contacto', 'seguimiento'] as MainTab[]).map((tab) => (
               <button
@@ -108,7 +108,7 @@ export default function Dashboard() {
       </div>
 
       {/* Content */}
-      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+      <main className="px-4 sm:px-8 py-6">
         {months.length === 0 ? (
           <div className="text-center py-24 text-gray-400">
             <p className="text-lg font-medium mb-2">No hay datos cargados</p>
