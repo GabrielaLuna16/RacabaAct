@@ -52,14 +52,23 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Header */}
-      <header className="border-b border-gray-100 bg-white sticky top-0 z-10">
-        <div className="px-4 sm:px-8 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <span className="text-2xl font-bold tracking-tight text-gray-900" style={{ fontFamily: "'Cormorant Garamond', serif" }}>
-              RACABA
-            </span>
-            <span className="text-xs text-gray-400 font-medium hidden sm:inline">Dashboard de Asesores</span>
+      {/* Tabs + filtro en una sola línea */}
+      <div className="border-b border-gray-100 bg-white sticky top-0 z-10">
+        <div className="px-4 sm:px-8 flex items-center justify-between">
+          <div className="flex gap-0">
+            {(['primer_contacto', 'seguimiento'] as MainTab[]).map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setMainTab(tab)}
+                className={`px-6 py-3 text-sm font-medium border-b-2 transition-colors
+                  ${mainTab === tab
+                    ? 'border-[#5A614F] text-[#5A614F]'
+                    : 'border-transparent text-gray-500 hover:text-gray-700'
+                  }`}
+              >
+                {tab === 'primer_contacto' ? 'Primer Contacto' : 'Seguimiento'}
+              </button>
+            ))}
           </div>
 
           <div className="flex items-center gap-3">
@@ -82,27 +91,6 @@ export default function Dashboard() {
             >
               + Cargar mes
             </a>
-          </div>
-        </div>
-      </header>
-
-      {/* Main tabs */}
-      <div className="border-b border-gray-100 bg-white">
-        <div className="px-4 sm:px-8">
-          <div className="flex gap-0">
-            {(['primer_contacto', 'seguimiento'] as MainTab[]).map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setMainTab(tab)}
-                className={`px-6 py-3 text-sm font-medium border-b-2 transition-colors
-                  ${mainTab === tab
-                    ? 'border-[#5A614F] text-[#5A614F]'
-                    : 'border-transparent text-gray-500 hover:text-gray-700'
-                  }`}
-              >
-                {tab === 'primer_contacto' ? 'Primer Contacto' : 'Seguimiento'}
-              </button>
-            ))}
           </div>
         </div>
       </div>
