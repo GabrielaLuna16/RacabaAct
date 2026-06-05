@@ -25,16 +25,21 @@ export async function commitJsonToGitHub(
 ): Promise<void> {
   const octokit = getOctokit();
   const encoded = Buffer.from(JSON.stringify(content, null, 2)).toString('base64');
-  const sha = await getFileSha(octokit, path);
 
-  await octokit.repos.createOrUpdateFileContents({
-    owner,
-    repo,
-    path,
-    message,
-    content: encoded,
-    sha,
-  });
+  // Intento 1 — SHA fresco
+  let sha = await getFileSha(octokit, path);
+  try {
+    await octokit.repos.createOrUpdateFileContents({ owner, repo, path, message, content: encoded, sha });
+    return;
+  } catch (err: unknown) {
+    // 409 = SHA desactualizado (conflicto). Reintentamos con SHA actualizado.
+    const status = (err as { status?: number }).status;
+    if (status !== 409) throw err;
+  }
+
+  // Intento 2 — SHA actualizado
+  sha = await getFileSha(octokit, path);
+  await octokit.repos.createOrUpdateFileContents({ owner, repo, path, message, content: encoded, sha });
 }
 
 export async function getMonthsList(): Promise<string[]> {
