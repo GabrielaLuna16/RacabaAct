@@ -4,6 +4,7 @@ import path from 'path';
 import { processPrimerContacto } from '@/lib/processPrimerContacto';
 import { processSeguimiento } from '@/lib/processSeguimiento';
 import { commitJsonToGitHub, updateMonthsList } from '@/lib/github';
+import type { NonWorkingConfig } from '@/lib/nonWorkingConfig';
 
 // USE_GITHUB=true → modo producción (commit a GitHub). Por defecto: modo local.
 const IS_LOCAL = process.env.USE_GITHUB !== 'true';
@@ -41,8 +42,11 @@ export async function POST(req: NextRequest) {
     const pcBuffer = Buffer.from(await pcFile.arrayBuffer());
     const segBuffer = Buffer.from(await segFile.arrayBuffer());
 
-    const pcData = processPrimerContacto({ buffer: pcBuffer }, monthStr);
-    const segData = processSeguimiento({ buffer: segBuffer }, monthStr);
+    const nonWorkingRaw = formData.get('non_working_config') as string | null;
+    const nonWorking: NonWorkingConfig = nonWorkingRaw ? JSON.parse(nonWorkingRaw) : {};
+
+    const pcData = processPrimerContacto({ buffer: pcBuffer }, monthStr, nonWorking);
+    const segData = processSeguimiento({ buffer: segBuffer }, monthStr, nonWorking);
 
     if (IS_LOCAL) {
       // Modo local: escribe directamente a public/data/

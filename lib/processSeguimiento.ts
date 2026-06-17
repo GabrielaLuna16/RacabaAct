@@ -1,4 +1,5 @@
 import { parseExcel, excelSerialToDate, median, formatDate, formatDateOnly, RawRow } from './excelUtils';
+import { NonWorkingConfig, skipToNextWorkingDay } from './nonWorkingConfig';
 
 const REST_DAYS: Record<string, number> = {
   'Hugo Cordova': 2,    // martes
@@ -13,7 +14,7 @@ function addDays(d: Date, n: number): Date {
   return r;
 }
 
-function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string): Date {
+function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string, config: NonWorkingConfig): Date {
   const restDay = REST_DAYS[advisor] ?? -1;
   let effective = new Date(dueDate);
 
@@ -22,7 +23,8 @@ function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string): 
     const m = effective.getUTCMonth(); // 3 = April
     const d = effective.getUTCDate();
     if (m === 3 && d >= 1 && d <= 5) {
-      return new Date(Date.UTC(2026, 3, 6)); // April 6, 2026
+      effective = new Date(Date.UTC(2026, 3, 6)); // April 6, 2026
+      return skipToNextWorkingDay(effective, advisor, restDay, config);
     }
   }
 
@@ -30,6 +32,9 @@ function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string): 
   if (effective.getUTCDay() === restDay) {
     effective = addDays(effective, 1);
   }
+
+  // Skip vacaciones y festivos configurados
+  effective = skipToNextWorkingDay(effective, advisor, restDay, config);
 
   return effective;
 }
@@ -99,7 +104,8 @@ function buildStats(d: ReturnType<typeof emptySection>): SectionStats {
 
 export function processSeguimiento(
   opts: { filePath?: string; buffer?: ArrayBuffer | Buffer },
-  monthStr: string
+  monthStr: string,
+  nonWorking: NonWorkingConfig = {}
 ): SeguimientoData {
   const rows: RawRow[] = parseExcel({ ...opts, headerRow: 7 });
 
@@ -138,7 +144,7 @@ export function processSeguimiento(
     const dueDateOnly = new Date(Date.UTC(
       dueRaw.getUTCFullYear(), dueRaw.getUTCMonth(), dueRaw.getUTCDate()
     ));
-    const effectiveDue = getEffectiveDueDate(dueDateOnly, advisor, monthStr);
+    const effectiveDue = getEffectiveDueDate(dueDateOnly, advisor, monthStr, nonWorking);
     const closedDateOnly = new Date(Date.UTC(
       closed.getUTCFullYear(), closed.getUTCMonth(), closed.getUTCDate()
     ));

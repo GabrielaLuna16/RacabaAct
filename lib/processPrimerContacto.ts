@@ -1,4 +1,5 @@
 import { parseExcel, excelSerialToDate, median, formatDate, RawRow } from './excelUtils';
+import { NonWorkingConfig, skipToNextWorkingDay } from './nonWorkingConfig';
 
 // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday
 const REST_DAYS: Record<string, number> = {
@@ -14,7 +15,7 @@ function addDays(d: Date, n: number): Date {
   return r;
 }
 
-function getDueDate(created: Date, advisor: string): Date {
+function getDueDate(created: Date, advisor: string, config: NonWorkingConfig): Date {
   const restDay = REST_DAYS[advisor] ?? -1;
   let due = new Date(created);
 
@@ -34,6 +35,9 @@ function getDueDate(created: Date, advisor: string): Date {
   if (addDays(due, 1).getUTCDay() === restDay) {
     due = addDays(due, 2);
   }
+
+  // Skip vacaciones y festivos configurados
+  due = skipToNextWorkingDay(due, advisor, restDay, config);
 
   return due;
 }
@@ -76,7 +80,8 @@ const ADVISOR_ORDER = ['Hugo Cordova', 'Gladys Favela', 'Erick Suarez', 'Indira 
 
 export function processPrimerContacto(
   opts: { filePath?: string; buffer?: ArrayBuffer | Buffer },
-  monthStr: string
+  monthStr: string,
+  nonWorking: NonWorkingConfig = {}
 ): PrimerContactoData {
   const rows: RawRow[] = parseExcel({ ...opts, headerRow: 7 });
 
@@ -117,7 +122,7 @@ export function processPrimerContacto(
       continue;
     }
 
-    const dueDate = getDueDate(created, advisor);
+    const dueDate = getDueDate(created, advisor, nonWorking);
     const closedDateOnly = new Date(Date.UTC(
       closed.getUTCFullYear(), closed.getUTCMonth(), closed.getUTCDate()
     ));
