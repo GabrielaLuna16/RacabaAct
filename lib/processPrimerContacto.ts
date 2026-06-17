@@ -9,6 +9,33 @@ const REST_DAYS: Record<string, number> = {
   'Indira Villegas': 2, // martes
 };
 
+// Horario laboral (horas decimales en tiempo local — Excel serial se trata como hora local)
+const WORK_START: Record<string, number> = {
+  'Hugo Cordova':   10.5, // 10:30 AM
+  'Gladys Favela':  10.5, // 10:30 AM
+  'Erick Suarez':   10,   // 10:00 AM
+  'Indira Villegas':10,   // 10:00 AM
+};
+const WORK_END = 17; // 5:00 PM todos
+
+// Calcula horas laborales entre dos fechas (solo cuenta tiempo dentro del horario)
+function workingHoursBetween(created: Date, closed: Date, advisor: string): number {
+  if (closed.getTime() <= created.getTime()) return 0;
+  const startHour = WORK_START[advisor] ?? 10;
+  const restDay = REST_DAYS[advisor] ?? -1;
+  let total = 0;
+  let day = new Date(Date.UTC(created.getUTCFullYear(), created.getUTCMonth(), created.getUTCDate()));
+  while (day.getTime() < closed.getTime()) {
+    if (day.getUTCDay() !== restDay) {
+      const winStart = Math.max(created.getTime(), day.getTime() + startHour * 3600000);
+      const winEnd   = Math.min(closed.getTime(),  day.getTime() + WORK_END  * 3600000);
+      if (winStart < winEnd) total += (winEnd - winStart) / 3600000;
+    }
+    day = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate() + 1));
+  }
+  return total;
+}
+
 function addDays(d: Date, n: number): Date {
   const r = new Date(d);
   r.setUTCDate(r.getUTCDate() + n);
@@ -130,9 +157,9 @@ export function processPrimerContacto(
       dueDate.getUTCFullYear(), dueDate.getUTCMonth(), dueDate.getUTCDate()
     ));
 
-    // Hours between created and closed
-    const hours = (closed.getTime() - created.getTime()) / 3600000;
-    if (hours >= 0) data.closingHours.push(hours);
+    // Horas laborales entre creación y cierre (solo cuenta dentro del horario del asesor)
+    const hours = workingHoursBetween(created, closed, advisor);
+    if (hours > 0) data.closingHours.push(hours);
 
     if (closedDateOnly <= dueDateOnly) {
       data.counts.a_tiempo++;
