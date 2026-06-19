@@ -168,7 +168,7 @@ export function processSeguimiento(
         tarea: subject,
         tarea_url,
         due_date: formatDateOnly(dueDateOnly),
-        cerrado: formatDate(closed),
+        cerrado: formatDateOnly(closed),
       });
     }
   }

@@ -1,4 +1,4 @@
-import { parseExcel, excelSerialToDate, median, formatDate, RawRow } from './excelUtils';
+import { parseExcel, excelSerialToDate, median, formatDate, formatDateOnly, RawRow } from './excelUtils';
 import { NonWorkingConfig, skipToNextWorkingDay } from './nonWorkingConfig';
 
 // 0 = Sunday, 1 = Monday, 2 = Tuesday, 3 = Wednesday, 4 = Thursday, 5 = Friday, 6 = Saturday
@@ -175,8 +175,8 @@ export function processPrimerContacto(
         contacto: contact,
         tarea: subject,
         tarea_url,
-        creado: formatDate(created),
-        cerrado: formatDate(closed),
+        creado: formatDateOnly(created),
+        cerrado: formatDateOnly(closed),
       });
     }
   }
