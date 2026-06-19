@@ -10,37 +10,42 @@
       "pct_a_tiempo": 95,
       "pct_tardio": 5,
       "pct_no_realizada": 0,
-      "mediana_horas": 6.583333333333333,
+      "mediana_horas": 1.8166666666666667,
       "tardio_detail": [
         {
-          "contacto": "Josue Quintero",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "27/05/2026, 11:08",
-          "cerrado": "28/05/2026, 10:57"
-        },
-        {
-          "contacto": "Elizabeth Htx",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "01/05/2026, 16:21",
-          "cerrado": "02/05/2026, 12:23"
-        },
-        {
           "contacto": "Jose de Dejesus Perez Leo",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018195008",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "20/05/2026, 16:20",
           "cerrado": "21/05/2026, 11:35"
         },
         {
           "contacto": "Lorena Heredia",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018666016",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "27/05/2026, 16:54",
           "cerrado": "28/05/2026, 11:15"
         },
         {
+          "contacto": "Elizabeth Htx",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000016860025",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "01/05/2026, 16:21",
+          "cerrado": "02/05/2026, 12:23"
+        },
+        {
           "contacto": "Judith Flores Ames",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018692005",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "27/05/2026, 16:56",
           "cerrado": "28/05/2026, 11:51"
+        },
+        {
+          "contacto": "Josue Quintero",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018691004",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "27/05/2026, 11:08",
+          "cerrado": "28/05/2026, 10:57"
         }
       ]
     },
@@ -52,49 +57,56 @@
       "pct_a_tiempo": 63,
       "pct_tardio": 37,
       "pct_no_realizada": 0,
-      "mediana_horas": 18.18333361111111,
+      "mediana_horas": 6.049999722222222,
       "tardio_detail": [
         {
+          "contacto": "Arlette Espinoza",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017983024",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "18/05/2026, 22:23",
+          "cerrado": "22/05/2026, 09:29"
+        },
+        {
+          "contacto": "Letrushka Hernandez",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018509013",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "25/05/2026, 20:34",
+          "cerrado": "27/05/2026, 09:52"
+        },
+        {
+          "contacto": "Josue Hernandez",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018502027",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "25/05/2026, 19:47",
+          "cerrado": "27/05/2026, 09:49"
+        },
+        {
           "contacto": "Alejandro Castanedo",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017606003",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "11/05/2026, 14:51",
           "cerrado": "12/05/2026, 14:23"
         },
         {
           "contacto": "Carlos Gutierrez sandoval",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017005014",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "02/05/2026, 22:47",
           "cerrado": "05/05/2026, 14:23"
         },
         {
           "contacto": "Bring Chateau",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018119003",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "19/05/2026, 00:23",
           "cerrado": "22/05/2026, 09:33"
         },
         {
-          "contacto": "Letrushka Hernandez",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "25/05/2026, 20:34",
-          "cerrado": "27/05/2026, 09:52"
-        },
-        {
           "contacto": "Skarlett Gro Landeros Cosmetóloga",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017969036",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "18/05/2026, 20:23",
           "cerrado": "22/05/2026, 09:23"
-        },
-        {
-          "contacto": "Arlette Espinoza",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "18/05/2026, 22:23",
-          "cerrado": "22/05/2026, 09:29"
-        },
-        {
-          "contacto": "Josue Hernandez",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "25/05/2026, 19:47",
-          "cerrado": "27/05/2026, 09:49"
         }
       ]
     },
@@ -106,22 +118,25 @@
       "pct_a_tiempo": 88,
       "pct_tardio": 12,
       "pct_no_realizada": 0,
-      "mediana_horas": 1.7666666666666666,
+      "mediana_horas": 0.5416666666666667,
       "tardio_detail": [
         {
           "contacto": "Timothy Mcgehee",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017381004",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "08/05/2026, 01:04",
           "cerrado": "09/05/2026, 09:20"
         },
         {
           "contacto": "José Ortiz",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Contacts/zcrm_6857999000017626003",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "11/05/2026, 16:18",
           "cerrado": "12/05/2026, 09:24"
         },
         {
           "contacto": "Fausto Millan",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018495011",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "25/05/2026, 07:20",
           "cerrado": "26/05/2026, 10:07"
@@ -136,19 +151,21 @@
       "pct_a_tiempo": 94,
       "pct_tardio": 6,
       "pct_no_realizada": 0,
-      "mediana_horas": 1.6666666666666667,
+      "mediana_horas": 0.3333336111111111,
       "tardio_detail": [
         {
-          "contacto": "Pepe Prado",
-          "tarea": "Actividad Contactar Inmediato",
-          "creado": "21/05/2026, 16:47",
-          "cerrado": "22/05/2026, 10:09"
-        },
-        {
           "contacto": "Antonio López López",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000017006003",
           "tarea": "Actividad Contactar Inmediato",
           "creado": "02/05/2026, 06:53",
           "cerrado": "04/05/2026, 15:32"
+        },
+        {
+          "contacto": "Pepe Prado",
+          "contacto_url": "https://crm.zoho.com/crm/org890924063/tab/Leads/zcrm_6857999000018329005",
+          "tarea": "Actividad Contactar Inmediato",
+          "creado": "21/05/2026, 16:47",
+          "cerrado": "22/05/2026, 10:09"
         }
       ]
     }
