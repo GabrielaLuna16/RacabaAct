@@ -136,7 +136,8 @@ export function processSeguimiento(
     const relatedTo   = String(row['Related To']   ?? '').trim();
     const contactName = String(row['Contact Name'] ?? '').trim();
     const contact = relatedTo || contactName;
-    const recordId = String(row['Record Id'] ?? row['Record ID'] ?? '').trim();
+    const recordIdRaw = String(row['Record Id'] ?? row['Record ID'] ?? '').trim();
+    const recordId = recordIdRaw.replace(/^zcrm_/, '');
     const contacto_url = recordId
       ? `https://crm.zoho.com/crm/org890924063/tab/${relatedTo ? 'Leads' : 'Contacts'}/${recordId}`
       : '';
