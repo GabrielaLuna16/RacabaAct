@@ -71,6 +71,7 @@ function getDueDate(created: Date, advisor: string, config: NonWorkingConfig): D
 
 export interface TardioDetail {
   contacto: string;
+  contacto_url: string;
   tarea: string;
   creado: string;
   cerrado: string;
@@ -133,9 +134,13 @@ export function processPrimerContacto(
     const created = excelSerialToDate(row['Created Time']);
     const closed = excelSerialToDate(row['Closed Time']);
     const subject = String(row['Subject'] ?? '').trim();
-    const contact =
-      String(row['Related To'] ?? '').trim() ||
-      String(row['Contact Name'] ?? '').trim();
+    const relatedTo  = String(row['Related To']   ?? '').trim();
+    const contactName = String(row['Contact Name'] ?? '').trim();
+    const contact = relatedTo || contactName;
+    const recordId = String(row['Record Id'] ?? row['Record ID'] ?? '').trim();
+    const contacto_url = recordId
+      ? `https://crm.zoho.com/crm/org890924063/tab/${relatedTo ? 'Leads' : 'Contacts'}/${recordId}`
+      : '';
 
     const data = byAdvisor[advisor];
 
@@ -167,6 +172,7 @@ export function processPrimerContacto(
       data.counts.cierre_tardio++;
       data.tardio.push({
         contacto: contact,
+        contacto_url,
         tarea: subject,
         creado: formatDate(created),
         cerrado: formatDate(closed),

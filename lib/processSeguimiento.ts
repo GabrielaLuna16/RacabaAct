@@ -41,6 +41,7 @@ function getEffectiveDueDate(dueDate: Date, advisor: string, monthStr: string, c
 
 export interface TardioDetailSeg {
   contacto: string;
+  contacto_url: string;
   tarea: string;
   due_date: string;
   cerrado: string;
@@ -132,9 +133,13 @@ export function processSeguimiento(
 
     const dueRaw = excelSerialToDate(row['Due Date']);
     const closed = excelSerialToDate(row['Closed Time']);
-    const contact =
-      String(row['Related To'] ?? '').trim() ||
-      String(row['Contact Name'] ?? '').trim();
+    const relatedTo   = String(row['Related To']   ?? '').trim();
+    const contactName = String(row['Contact Name'] ?? '').trim();
+    const contact = relatedTo || contactName;
+    const recordId = String(row['Record Id'] ?? row['Record ID'] ?? '').trim();
+    const contacto_url = recordId
+      ? `https://crm.zoho.com/crm/org890924063/tab/${relatedTo ? 'Leads' : 'Contacts'}/${recordId}`
+      : '';
 
     if (!dueRaw || !closed) {
       section.counts.no_realizada++;
@@ -159,6 +164,7 @@ export function processSeguimiento(
       section.counts.cierre_tardio++;
       section.tardio.push({
         contacto: contact,
+        contacto_url,
         tarea: subject,
         due_date: formatDateOnly(dueDateOnly),
         cerrado: formatDate(closed),
