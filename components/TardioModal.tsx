@@ -4,16 +4,16 @@ import { useEffect } from 'react';
 
 interface TardioDetailPC {
   contacto: string;
-  contacto_url?: string;
   tarea: string;
+  tarea_url?: string;
   creado: string;
   cerrado: string;
 }
 
 interface TardioDetailSeg {
   contacto: string;
-  contacto_url?: string;
   tarea: string;
+  tarea_url?: string;
   due_date: string;
   cerrado: string;
 }
@@ -85,24 +85,24 @@ export default function TardioModal({ isOpen, onClose, advisor, type, rows, acce
                 {type === 'primer_contacto'
                   ? pcRows.map((r, i) => (
                     <tr key={i} className="border-t border-gray-50 hover:bg-gray-50">
+                      <td className="px-4 py-2">{r.contacto || '—'}</td>
                       <td className="px-4 py-2">
-                        {r.contacto_url
-                          ? <a href={r.contacto_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.contacto || '—'}</a>
-                          : (r.contacto || '—')}
+                        {r.tarea_url
+                          ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
+                          : r.tarea}
                       </td>
-                      <td className="px-4 py-2">{r.tarea}</td>
                       <td className="px-4 py-2 text-gray-500">{r.creado}</td>
                       <td className="px-4 py-2 text-gray-500">{r.cerrado}</td>
                     </tr>
                   ))
                   : segRows.map((r, i) => (
                     <tr key={i} className="border-t border-gray-50 hover:bg-gray-50">
+                      <td className="px-4 py-2">{r.contacto || '—'}</td>
                       <td className="px-4 py-2">
-                        {r.contacto_url
-                          ? <a href={r.contacto_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.contacto || '—'}</a>
-                          : (r.contacto || '—')}
+                        {r.tarea_url
+                          ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
+                          : r.tarea}
                       </td>
-                      <td className="px-4 py-2">{r.tarea}</td>
                       <td className="px-4 py-2 text-gray-500">{r.due_date}</td>
                       <td className="px-4 py-2 text-gray-500">{r.cerrado}</td>
                     </tr>
