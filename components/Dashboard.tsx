@@ -20,6 +20,8 @@ export default function Dashboard() {
   const [pcData, setPcData] = useState<PrimerContactoData | null>(null);
   const [segData, setSegData] = useState<SeguimientoData | null>(null);
   const [loading, setLoading] = useState(false);
+  const [allPcData, setAllPcData] = useState<PrimerContactoData[]>([]);
+  const [allSegData, setAllSegData] = useState<SeguimientoData[]>([]);
 
   // Load months index
   useEffect(() => {
@@ -31,6 +33,17 @@ export default function Dashboard() {
       })
       .catch(() => {});
   }, []);
+
+  // Load all months for comparison
+  useEffect(() => {
+    if (months.length === 0) return;
+    Promise.all(months.map((m) =>
+      fetch(`/data/primer-contacto/${m}.json`).then((r) => r.ok ? r.json() : null)
+    )).then((results) => setAllPcData(results.filter(Boolean) as PrimerContactoData[]));
+    Promise.all(months.map((m) =>
+      fetch(`/data/seguimiento/${m}.json`).then((r) => r.ok ? r.json() : null)
+    )).then((results) => setAllSegData(results.filter(Boolean) as SeguimientoData[]));
+  }, [months]);
 
   useEffect(() => {
     if (!selectedMonth) return;
@@ -49,6 +62,7 @@ export default function Dashboard() {
   }, [selectedMonth]);
 
   const activeData = mainTab === 'primer_contacto' ? pcData : segData;
+  const allMonthsData = mainTab === 'primer_contacto' ? allPcData : allSegData;
 
   return (
     <div className="min-h-screen bg-white">
@@ -117,6 +131,7 @@ export default function Dashboard() {
             key={`${mainTab}-${selectedMonth}`}
             data={activeData}
             tabType={mainTab}
+            allMonthsData={allMonthsData}
           />
         )}
       </main>

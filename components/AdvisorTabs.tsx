@@ -22,9 +22,10 @@ const COMPANY_GROUP: Record<string, 'bosques' | 'baja'> = {
 interface AdvisorTabsProps {
   data: PrimerContactoData | SeguimientoData;
   tabType: TabType;
+  allMonthsData: (PrimerContactoData | SeguimientoData)[];
 }
 
-export default function AdvisorTabs({ data, tabType }: AdvisorTabsProps) {
+export default function AdvisorTabs({ data, tabType, allMonthsData }: AdvisorTabsProps) {
   const advisors = Object.keys(data.advisors);
   const [active, setActive] = useState(advisors[0] ?? '');
 
@@ -77,6 +78,7 @@ export default function AdvisorTabs({ data, tabType }: AdvisorTabsProps) {
           advisor={active}
           stats={data.advisors[active]}
           tabType={tabType}
+          allMonthsData={allMonthsData}
         />
       )}
     </div>

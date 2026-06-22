@@ -4,8 +4,8 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import KPICard from './KPICard';
 import TardioModal from './TardioModal';
-import type { AdvisorStats as PCStats } from '@/lib/processPrimerContacto';
-import type { SectionStats, HugoAdvisorStats } from '@/lib/processSeguimiento';
+import type { AdvisorStats as PCStats, PrimerContactoData } from '@/lib/processPrimerContacto';
+import type { SectionStats, HugoAdvisorStats, SeguimientoData } from '@/lib/processSeguimiento';
 
 const DonutChart = dynamic(() => import('./DonutChart'), { ssr: false });
 
@@ -60,6 +60,77 @@ const BRAND: Record<string, BrandColors> = {
     panelBg: '#F3F6FA', accentFont: "'Instrument Serif', serif",
   },
 };
+
+interface CompareEntry {
+  label: string;
+  month: string;
+  aTime: number;
+  tardio: number;
+  noRealizada: number;
+  mediana: number | null;
+}
+
+function Trend({ delta, better }: { delta: number; better: 'up' | 'down' }) {
+  if (Math.abs(delta) < 0.5) return null;
+  const isGood = better === 'up' ? delta > 0 : delta < 0;
+  return (
+    <span className={`ml-1 text-xs font-semibold ${isGood ? 'text-green-600' : 'text-red-500'}`}>
+      {delta > 0 ? '↑' : '↓'}{Math.abs(Math.round(delta))}
+    </span>
+  );
+}
+
+function MonthComparison({ entries, brand }: { entries: CompareEntry[]; brand: BrandColors }) {
+  if (entries.length < 2) return null;
+  return (
+    <div className="mt-5 pt-4 border-t border-gray-200">
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">Comparativa mensual</p>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[400px]">
+          <thead>
+            <tr className="text-xs text-gray-400 border-b border-gray-100">
+              <th className="text-left pb-2 font-medium">Mes</th>
+              <th className="text-right pb-2 font-medium">A tiempo</th>
+              <th className="text-right pb-2 font-medium">Tardío</th>
+              <th className="text-right pb-2 font-medium">No realizadas</th>
+              <th className="text-right pb-2 font-medium">Mediana</th>
+            </tr>
+          </thead>
+          <tbody>
+            {entries.map((e, i) => {
+              const prev = entries[i - 1];
+              return (
+                <tr key={e.month} className="border-b border-gray-50 last:border-0">
+                  <td className="py-2 text-gray-700 font-medium text-xs">{e.label}</td>
+                  <td className="py-2 text-right">
+                    <span className="font-bold" style={{ color: brand.kpiATime }}>{e.aTime}%</span>
+                    {prev && <Trend delta={e.aTime - prev.aTime} better="up" />}
+                  </td>
+                  <td className="py-2 text-right">
+                    <span className="font-bold" style={{ color: brand.kpiTardio }}>{e.tardio}%</span>
+                    {prev && <Trend delta={e.tardio - prev.tardio} better="down" />}
+                  </td>
+                  <td className="py-2 text-right">
+                    <span className="font-bold" style={{ color: brand.kpiNoRealizada }}>{e.noRealizada}%</span>
+                    {prev && <Trend delta={e.noRealizada - prev.noRealizada} better="down" />}
+                  </td>
+                  <td className="py-2 text-right">
+                    <span className="font-bold" style={{ color: brand.kpiMediana }}>
+                      {e.mediana != null ? `${e.mediana.toFixed(1)}h` : '—'}
+                    </span>
+                    {prev && e.mediana != null && prev.mediana != null && (
+                      <Trend delta={e.mediana - prev.mediana} better="down" />
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
 
 function initials(name: string) {
   return name.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase();
@@ -165,11 +236,33 @@ interface AdvisorPanelProps {
   advisor: string;
   stats: PCStats | HugoAdvisorStats | SectionStats;
   tabType: TabType;
+  allMonthsData: (PrimerContactoData | SeguimientoData)[];
 }
 
-export default function AdvisorPanel({ advisor, stats, tabType }: AdvisorPanelProps) {
+export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData }: AdvisorPanelProps) {
   const brand = BRAND[advisor] ?? BRAND['Hugo Cordova'];
   const isHugoSeg = tabType === 'seguimiento' && advisor === 'Hugo Cordova' && 'actividades' in stats;
+
+  const compareEntries: CompareEntry[] = allMonthsData
+    .filter((d) => advisor in d.advisors)
+    .sort((a, b) => a.month.localeCompare(b.month))
+    .map((d) => {
+      const s = d.advisors[advisor];
+      let st: PCStats | SectionStats;
+      if ('actividades' in s) {
+        st = (s as HugoAdvisorStats).actividades;
+      } else {
+        st = s as PCStats | SectionStats;
+      }
+      return {
+        label: d.label,
+        month: d.month,
+        aTime: st.pct_a_tiempo,
+        tardio: st.pct_tardio,
+        noRealizada: st.pct_no_realizada,
+        mediana: st.mediana_horas,
+      };
+    });
 
   return (
     <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100" style={{ background: brand.panelBg }}>
@@ -228,6 +321,7 @@ export default function AdvisorPanel({ advisor, stats, tabType }: AdvisorPanelPr
             brand={brand}
           />
         )}
+        <MonthComparison entries={compareEntries} brand={brand} />
       </div>
     </div>
   );
