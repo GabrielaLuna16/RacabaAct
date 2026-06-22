@@ -18,6 +18,17 @@ const WORK_START: Record<string, number> = {
 };
 const WORK_END = 17; // 5:00 PM todos
 
+export type Turno = 'horario_laboral' | 'fuera_horario' | 'fin_semana';
+
+function getTurno(dt: Date, advisor: string): Turno {
+  const dow = dt.getUTCDay();
+  const restDay = REST_DAYS[advisor] ?? -1;
+  if (dow === 0 || dow === 6 || dow === restDay) return 'fin_semana';
+  const h = dt.getUTCHours() + dt.getUTCMinutes() / 60;
+  const start = WORK_START[advisor] ?? 10;
+  return h >= start && h < WORK_END ? 'horario_laboral' : 'fuera_horario';
+}
+
 // Calcula horas laborales entre dos fechas (solo cuenta tiempo dentro del horario)
 function workingHoursBetween(created: Date, closed: Date, advisor: string): number {
   if (closed.getTime() <= created.getTime()) return 0;
@@ -75,6 +86,8 @@ export interface TardioDetail {
   tarea_url: string;
   creado: string;
   cerrado: string;
+  turno: Turno;
+  tiempo_min: number;
 }
 
 export interface AdvisorStats {
@@ -171,12 +184,16 @@ export function processPrimerContacto(
       data.counts.a_tiempo++;
     } else {
       data.counts.cierre_tardio++;
+      const turno = getTurno(created, advisor);
+      const tiempo_min = Math.max(0, Math.round((closed.getTime() - created.getTime()) / 60000));
       data.tardio.push({
         contacto: contact,
         tarea: subject,
         tarea_url,
-        creado: formatDateOnly(created),
-        cerrado: formatDateOnly(closed),
+        creado: formatDate(created),
+        cerrado: formatDate(closed),
+        turno,
+        tiempo_min,
       });
     }
   }

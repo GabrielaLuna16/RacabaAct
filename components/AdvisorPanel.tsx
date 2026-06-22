@@ -70,12 +70,15 @@ interface CompareEntry {
   mediana: number | null;
 }
 
-function Trend({ delta, better }: { delta: number; better: 'up' | 'down' }) {
+function Trend({ delta, better, unit }: { delta: number; better: 'up' | 'down'; unit: '%' | 'h' }) {
   if (Math.abs(delta) < 0.5) return null;
   const isGood = better === 'up' ? delta > 0 : delta < 0;
+  const display = unit === 'h'
+    ? `${Math.abs(delta).toFixed(1)}h`
+    : `${Math.abs(Math.round(delta))}%`;
   return (
     <span className={`ml-1 text-sm font-bold ${isGood ? 'text-green-600' : 'text-red-500'}`}>
-      {delta > 0 ? '↑' : '↓'}{Math.abs(Math.round(delta))}
+      {delta > 0 ? '↑' : '↓'}{display}
     </span>
   );
 }
@@ -104,22 +107,22 @@ function MonthComparison({ entries, brand }: { entries: CompareEntry[]; brand: B
                   <td className="py-3 text-gray-700 font-semibold text-sm">{e.label}</td>
                   <td className="py-3 text-right">
                     <span className="font-bold text-base" style={{ color: brand.kpiATime }}>{e.aTime}%</span>
-                    {prev && <Trend delta={e.aTime - prev.aTime} better="up" />}
+                    {prev && <Trend delta={e.aTime - prev.aTime} better="up" unit="%" />}
                   </td>
                   <td className="py-3 text-right">
                     <span className="font-bold text-base" style={{ color: brand.kpiTardio }}>{e.tardio}%</span>
-                    {prev && <Trend delta={e.tardio - prev.tardio} better="down" />}
+                    {prev && <Trend delta={e.tardio - prev.tardio} better="down" unit="%" />}
                   </td>
                   <td className="py-3 text-right">
                     <span className="font-bold text-base" style={{ color: brand.kpiNoRealizada }}>{e.noRealizada}%</span>
-                    {prev && <Trend delta={e.noRealizada - prev.noRealizada} better="down" />}
+                    {prev && <Trend delta={e.noRealizada - prev.noRealizada} better="down" unit="%" />}
                   </td>
                   <td className="py-3 text-right">
                     <span className="font-bold text-base" style={{ color: brand.kpiMediana }}>
                       {e.mediana != null ? `${e.mediana.toFixed(1)}h` : '—'}
                     </span>
                     {prev && e.mediana != null && prev.mediana != null && (
-                      <Trend delta={e.mediana - prev.mediana} better="down" />
+                      <Trend delta={e.mediana - prev.mediana} better="down" unit="h" />
                     )}
                   </td>
                 </tr>

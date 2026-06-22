@@ -8,6 +8,23 @@ const REST_DAYS: Record<string, number> = {
   'Indira Villegas': 2, // martes
 };
 
+const WORK_START: Record<string, number> = {
+  'Hugo Cordova': 10.5, 'Gladys Favela': 10.5,
+  'Erick Suarez': 10,   'Indira Villegas': 10,
+};
+const WORK_END = 17;
+
+export type Turno = 'horario_laboral' | 'fuera_horario' | 'fin_semana';
+
+function getTurno(dt: Date, advisor: string): Turno {
+  const dow = dt.getUTCDay();
+  const restDay = REST_DAYS[advisor] ?? -1;
+  if (dow === 0 || dow === 6 || dow === restDay) return 'fin_semana';
+  const h = dt.getUTCHours() + dt.getUTCMinutes() / 60;
+  const start = WORK_START[advisor] ?? 10;
+  return h >= start && h < WORK_END ? 'horario_laboral' : 'fuera_horario';
+}
+
 function addDays(d: Date, n: number): Date {
   const r = new Date(d);
   r.setUTCDate(r.getUTCDate() + n);
@@ -45,6 +62,8 @@ export interface TardioDetailSeg {
   tarea_url: string;
   due_date: string;
   cerrado: string;
+  turno: Turno;
+  tiempo_min: number;
 }
 
 export interface SectionStats {
@@ -163,12 +182,16 @@ export function processSeguimiento(
       section.counts.a_tiempo++;
     } else {
       section.counts.cierre_tardio++;
+      const turno = getTurno(closed, advisor);
+      const tiempo_min = Math.max(0, Math.round((closed.getTime() - dueDateOnly.getTime()) / 60000));
       section.tardio.push({
         contacto: contact,
         tarea: subject,
         tarea_url,
         due_date: formatDateOnly(dueDateOnly),
-        cerrado: formatDateOnly(closed),
+        cerrado: formatDate(closed),
+        turno,
+        tiempo_min,
       });
     }
   }
