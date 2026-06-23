@@ -368,7 +368,7 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, c
         </div>
         {BOSQUES_ADVISORS.has(advisor) && (
           <img
-            src="/logos/bosques-de-otay.png"
+            src="/logos/bosques-de-otay.webp"
             alt="Bosques de Otay"
             className="h-10 object-contain opacity-80"
           />
