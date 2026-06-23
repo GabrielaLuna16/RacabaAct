@@ -91,6 +91,13 @@ export interface TardioDetail {
   tiempo_min: number;
 }
 
+export interface NoRealizadaDetail {
+  contacto: string;
+  tarea: string;
+  tarea_url: string;
+  creado: string | null;
+}
+
 export interface AdvisorStats {
   total: number;
   a_tiempo: number;
@@ -101,6 +108,7 @@ export interface AdvisorStats {
   pct_no_realizada: number;
   mediana_horas: number | null;
   tardio_detail: TardioDetail[];
+  no_realizada_detail: NoRealizadaDetail[];
 }
 
 export interface PrimerContactoData {
@@ -131,6 +139,7 @@ export function processPrimerContacto(
     closingHours: number[];
     counts: { a_tiempo: number; cierre_tardio: number; no_realizada: number };
     tardio: TardioDetail[];
+    noRealizada: NoRealizadaDetail[];
   }> = {};
 
   for (const row of rows) {
@@ -142,6 +151,7 @@ export function processPrimerContacto(
         closingHours: [],
         counts: { a_tiempo: 0, cierre_tardio: 0, no_realizada: 0 },
         tardio: [],
+        noRealizada: [],
       };
     }
 
@@ -161,11 +171,13 @@ export function processPrimerContacto(
 
     if (!closed) {
       data.counts.no_realizada++;
+      data.noRealizada.push({ contacto: contact, tarea: subject, tarea_url, creado: created ? formatDate(created) : null });
       continue;
     }
 
     if (!created) {
       data.counts.no_realizada++;
+      data.noRealizada.push({ contacto: contact, tarea: subject, tarea_url, creado: null });
       continue;
     }
 
@@ -222,6 +234,7 @@ export function processPrimerContacto(
       pct_no_realizada: pct(d.counts.no_realizada),
       mediana_horas: median(d.closingHours),
       tardio_detail: d.tardio,
+      no_realizada_detail: d.noRealizada,
     };
   }
 

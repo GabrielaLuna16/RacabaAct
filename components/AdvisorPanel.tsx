@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import KPICard from './KPICard';
-import type { AdvisorStats as PCStats, PrimerContactoData, Turno } from '@/lib/processPrimerContacto';
-import type { SectionStats, HugoAdvisorStats, SeguimientoData } from '@/lib/processSeguimiento';
+import type { AdvisorStats as PCStats, PrimerContactoData, Turno, NoRealizadaDetail } from '@/lib/processPrimerContacto';
+import type { SectionStats, HugoAdvisorStats, SeguimientoData, NoRealizadaDetailSeg } from '@/lib/processSeguimiento';
 
 const DonutChart = dynamic(() => import('./DonutChart'), { ssr: false });
 
@@ -191,6 +191,75 @@ function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | Sectio
   );
 }
 
+// ── Inline no realizadas table ───────────────────────────────────────────────
+
+function NoRealizadaInline({ stats, tabType }: { stats: PCStats | SectionStats; tabType: TabType }) {
+  const [search, setSearch] = useState('');
+
+  if (stats.no_realizada === 0) return null;
+
+  const rows = (stats as PCStats).no_realizada_detail as (NoRealizadaDetail | NoRealizadaDetailSeg)[] | undefined;
+  if (!rows || rows.length === 0) return null;
+
+  const filtered = rows.filter((r) =>
+    !search || r.contacto.toLowerCase().includes(search.toLowerCase())
+  );
+
+  const dateHeader = tabType === 'seguimiento' ? 'Fecha límite' : 'Creado';
+
+  return (
+    <div className="mt-4 pt-4 border-t border-gray-200">
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+        Actividades no realizadas
+      </p>
+
+      <div className="flex justify-end mb-3">
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Buscar por nombre..."
+          className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-300 min-w-[180px]"
+        />
+      </div>
+
+      <div className="overflow-x-auto">
+        {filtered.length === 0 ? (
+          <p className="py-4 text-gray-400 text-center text-sm">Sin registros</p>
+        ) : (
+          <table className="w-full text-sm min-w-[400px]">
+            <thead>
+              <tr className="bg-gray-50 text-gray-500 text-left text-xs uppercase tracking-wide">
+                <th className="px-3 py-2 font-semibold">Contacto</th>
+                <th className="px-3 py-2 font-semibold">Tarea</th>
+                <th className="px-3 py-2 font-semibold">{dateHeader}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filtered.map((r, i) => {
+                const dateVal = tabType === 'seguimiento'
+                  ? (r as NoRealizadaDetailSeg).due_date
+                  : (r as NoRealizadaDetail).creado;
+                return (
+                  <tr key={i} className="border-t border-gray-100 hover:bg-gray-50">
+                    <td className="px-3 py-2 font-medium text-gray-800">{r.contacto || '—'}</td>
+                    <td className="px-3 py-2 text-gray-600 max-w-[220px] truncate">
+                      {r.tarea_url
+                        ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
+                        : <span>{r.tarea}</span>}
+                    </td>
+                    <td className="px-3 py-2 text-gray-500 whitespace-nowrap">{dateVal || '—'}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        )}
+      </div>
+    </div>
+  );
+}
+
 // ── Comparativa mensual ──────────────────────────────────────────────────────
 
 interface CompareEntry {
@@ -365,6 +434,9 @@ function StatSection({
 
       {/* Tardíos desplegados */}
       <TardioInline stats={stats} tabType={tabType} accentColor={brand.kpiTardio} />
+
+      {/* No realizadas desplegadas */}
+      <NoRealizadaInline stats={stats} tabType={tabType} />
     </div>
   );
 }

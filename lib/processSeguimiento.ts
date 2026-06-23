@@ -84,6 +84,13 @@ export interface TardioDetailSeg {
   tiempo_min: number;
 }
 
+export interface NoRealizadaDetailSeg {
+  contacto: string;
+  tarea: string;
+  tarea_url: string;
+  due_date: string | null;
+}
+
 export interface SectionStats {
   total: number;
   a_tiempo: number;
@@ -94,6 +101,7 @@ export interface SectionStats {
   pct_no_realizada: number;
   mediana_horas: number | null;
   tardio_detail: TardioDetailSeg[];
+  no_realizada_detail: NoRealizadaDetailSeg[];
 }
 
 export interface HugoAdvisorStats {
@@ -120,8 +128,8 @@ function monthLabel(monthStr: string): string {
 
 const ADVISOR_ORDER = ['Hugo Cordova', 'Gladys Favela', 'Erick Suarez', 'Indira Villegas'];
 
-function emptySection(): { closingHours: number[]; counts: { a_tiempo: number; cierre_tardio: number; no_realizada: number }; tardio: TardioDetailSeg[] } {
-  return { closingHours: [], counts: { a_tiempo: 0, cierre_tardio: 0, no_realizada: 0 }, tardio: [] };
+function emptySection(): { closingHours: number[]; counts: { a_tiempo: number; cierre_tardio: number; no_realizada: number }; tardio: TardioDetailSeg[]; noRealizada: NoRealizadaDetailSeg[] } {
+  return { closingHours: [], counts: { a_tiempo: 0, cierre_tardio: 0, no_realizada: 0 }, tardio: [], noRealizada: [] };
 }
 
 function buildStats(d: ReturnType<typeof emptySection>): SectionStats {
@@ -137,6 +145,7 @@ function buildStats(d: ReturnType<typeof emptySection>): SectionStats {
     pct_no_realizada: pct(d.counts.no_realizada),
     mediana_horas: median(d.closingHours),
     tardio_detail: d.tardio,
+    no_realizada_detail: d.noRealizada,
   };
 }
 
@@ -181,6 +190,12 @@ export function processSeguimiento(
 
     if (!dueRaw || !closed) {
       section.counts.no_realizada++;
+      section.noRealizada.push({
+        contacto: contact,
+        tarea: subject,
+        tarea_url,
+        due_date: dueRaw ? formatDateOnly(new Date(Date.UTC(dueRaw.getUTCFullYear(), dueRaw.getUTCMonth(), dueRaw.getUTCDate()))) : null,
+      });
       continue;
     }
 
