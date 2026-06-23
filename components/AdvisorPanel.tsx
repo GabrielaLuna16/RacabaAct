@@ -58,6 +58,7 @@ const BRAND: Record<string, BrandColors> = {
 // ── Turno helpers ────────────────────────────────────────────────────────────
 
 function fmtTiempo(min: number): string {
+  if (min === 0) return '—';
   if (min < 60) return `${min} min`;
   if (min < 60 * 24) return `${(min / 60).toFixed(1)} h`;
   return `${Math.round(min / 1440)} día${min >= 2880 ? 's' : ''}`;
