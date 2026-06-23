@@ -10,7 +10,7 @@
       "pct_a_tiempo": 95,
       "pct_tardio": 5,
       "pct_no_realizada": 0,
-      "mediana_horas": 1.8166666666666667,
+      "mediana_horas": 1.5916666666666668,
       "tardio_detail": [
         {
           "contacto": "Jose de Dejesus Perez Leo",
@@ -19,7 +19,7 @@
           "creado": "20/05/2026, 16:20",
           "cerrado": "21/05/2026, 11:35",
           "turno": "horario_laboral",
-          "tiempo_min": 1155
+          "tiempo_min": 105
         },
         {
           "contacto": "Lorena Heredia",
@@ -28,7 +28,7 @@
           "creado": "27/05/2026, 16:54",
           "cerrado": "28/05/2026, 11:15",
           "turno": "horario_laboral",
-          "tiempo_min": 1101
+          "tiempo_min": 51
         },
         {
           "contacto": "Elizabeth Htx",
@@ -37,7 +37,7 @@
           "creado": "01/05/2026, 16:21",
           "cerrado": "02/05/2026, 12:23",
           "turno": "horario_laboral",
-          "tiempo_min": 1202
+          "tiempo_min": 39
         },
         {
           "contacto": "Judith Flores Ames",
@@ -46,7 +46,7 @@
           "creado": "27/05/2026, 16:56",
           "cerrado": "28/05/2026, 11:51",
           "turno": "horario_laboral",
-          "tiempo_min": 1135
+          "tiempo_min": 85
         },
         {
           "contacto": "Josue Quintero",
@@ -55,7 +55,7 @@
           "creado": "27/05/2026, 11:08",
           "cerrado": "28/05/2026, 10:57",
           "turno": "horario_laboral",
-          "tiempo_min": 1429
+          "tiempo_min": 379
         }
       ]
     },
@@ -67,7 +67,7 @@
       "pct_a_tiempo": 63,
       "pct_tardio": 37,
       "pct_no_realizada": 0,
-      "mediana_horas": 6.049999722222222,
+      "mediana_horas": 6.199999722222222,
       "tardio_detail": [
         {
           "contacto": "Letrushka Hernandez",
@@ -76,7 +76,7 @@
           "creado": "25/05/2026, 20:34",
           "cerrado": "27/05/2026, 09:52",
           "turno": "fuera_horario",
-          "tiempo_min": 2238
+          "tiempo_min": 390
         },
         {
           "contacto": "Arlette Espinoza",
@@ -85,7 +85,7 @@
           "creado": "18/05/2026, 22:23",
           "cerrado": "22/05/2026, 09:29",
           "turno": "fuera_horario",
-          "tiempo_min": 4986
+          "tiempo_min": 780
         },
         {
           "contacto": "Josue Hernandez",
@@ -94,7 +94,7 @@
           "creado": "25/05/2026, 19:47",
           "cerrado": "27/05/2026, 09:49",
           "turno": "fuera_horario",
-          "tiempo_min": 2282
+          "tiempo_min": 390
         },
         {
           "contacto": "Alejandro Castanedo",
@@ -103,7 +103,7 @@
           "creado": "11/05/2026, 14:51",
           "cerrado": "12/05/2026, 14:23",
           "turno": "horario_laboral",
-          "tiempo_min": 1413
+          "tiempo_min": 363
         },
         {
           "contacto": "Carlos Gutierrez sandoval",
@@ -112,7 +112,7 @@
           "creado": "02/05/2026, 22:47",
           "cerrado": "05/05/2026, 14:23",
           "turno": "fin_semana",
-          "tiempo_min": 3816
+          "tiempo_min": 623
         },
         {
           "contacto": "Bring Chateau",
@@ -121,7 +121,7 @@
           "creado": "19/05/2026, 00:23",
           "cerrado": "22/05/2026, 09:33",
           "turno": "fuera_horario",
-          "tiempo_min": 4870
+          "tiempo_min": 780
         },
         {
           "contacto": "Skarlett Gro Landeros Cosmetóloga",
@@ -130,7 +130,7 @@
           "creado": "18/05/2026, 20:23",
           "cerrado": "22/05/2026, 09:23",
           "turno": "fuera_horario",
-          "tiempo_min": 5100
+          "tiempo_min": 780
         }
       ]
     },
@@ -142,7 +142,7 @@
       "pct_a_tiempo": 88,
       "pct_tardio": 12,
       "pct_no_realizada": 0,
-      "mediana_horas": 0.5416666666666667,
+      "mediana_horas": 0.39999972222222224,
       "tardio_detail": [
         {
           "contacto": "Timothy Mcgehee",
@@ -151,7 +151,7 @@
           "creado": "08/05/2026, 01:04",
           "cerrado": "09/05/2026, 09:20",
           "turno": "fuera_horario",
-          "tiempo_min": 1937
+          "tiempo_min": 420
         },
         {
           "contacto": "José Ortiz",
@@ -160,7 +160,7 @@
           "creado": "11/05/2026, 16:18",
           "cerrado": "12/05/2026, 09:24",
           "turno": "horario_laboral",
-          "tiempo_min": 1025
+          "tiempo_min": 41
         },
         {
           "contacto": "Fausto Millan",
@@ -169,7 +169,7 @@
           "creado": "25/05/2026, 07:20",
           "cerrado": "26/05/2026, 10:07",
           "turno": "fuera_horario",
-          "tiempo_min": 1607
+          "tiempo_min": 427
         }
       ]
     },
@@ -181,7 +181,7 @@
       "pct_a_tiempo": 94,
       "pct_tardio": 6,
       "pct_no_realizada": 0,
-      "mediana_horas": 0.3333336111111111,
+      "mediana_horas": 0.3250001388888889,
       "tardio_detail": [
         {
           "contacto": "Antonio López López",
@@ -190,7 +190,7 @@
           "creado": "02/05/2026, 06:53",
           "cerrado": "04/05/2026, 15:32",
           "turno": "fin_semana",
-          "tiempo_min": 3399
+          "tiempo_min": 332
         },
         {
           "contacto": "Pepe Prado",
@@ -199,7 +199,7 @@
           "creado": "21/05/2026, 16:47",
           "cerrado": "22/05/2026, 10:09",
           "turno": "horario_laboral",
-          "tiempo_min": 1041
+          "tiempo_min": 21
         }
       ]
     }
