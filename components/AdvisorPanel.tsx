@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import KPICard from './KPICard';
-import TardioModal from './TardioModal';
 import type { AdvisorStats as PCStats, PrimerContactoData, Turno } from '@/lib/processPrimerContacto';
 import type { SectionStats, HugoAdvisorStats, SeguimientoData } from '@/lib/processSeguimiento';
 
@@ -87,48 +86,106 @@ function TurnoBadge({ turno }: { turno?: Turno }) {
 
 // ── Inline tardio table ──────────────────────────────────────────────────────
 
-function TardioInline({ stats, tabType }: { stats: PCStats | SectionStats; tabType: TabType }) {
+const TURNO_FILTERS: { key: 'todos' | Turno; label: string }[] = [
+  { key: 'todos',           label: 'TODOS' },
+  { key: 'horario_laboral', label: 'HORARIO LABORAL' },
+  { key: 'fuera_horario',   label: 'FUERA DE HORARIO L-V' },
+  { key: 'fin_semana',      label: 'FIN DE SEMANA' },
+];
+
+function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | SectionStats; tabType: TabType; accentColor: string }) {
+  const [filter, setFilter] = useState<'todos' | Turno>('todos');
+  const [search, setSearch] = useState('');
+
   if (stats.cierre_tardio === 0) return null;
 
   type AnyRow = {
     contacto: string; tarea: string; tarea_url?: string;
     creado?: string; cerrado?: string; due_date?: string;
+    turno?: Turno; tiempo_min?: number;
   };
+
   const rows = stats.tardio_detail as AnyRow[];
+  const filtered = rows.filter((r) => {
+    const matchFilter = filter === 'todos' || r.turno === filter;
+    const matchSearch = !search || r.contacto.toLowerCase().includes(search.toLowerCase());
+    return matchFilter && matchSearch;
+  });
+
   const dateHeader = tabType === 'seguimiento' ? 'Fecha límite' : 'Creado';
+  const timeHeader = tabType === 'seguimiento' ? 'Tiempo tarde' : 'Tiempo';
 
   return (
     <div className="mt-4 pt-4 border-t border-gray-200">
       <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
         Actividades con cierre tardío
       </p>
+
+      {/* Filtros + Búsqueda */}
+      <div className="flex flex-wrap items-center gap-2 mb-3">
+        {TURNO_FILTERS.map(({ key, label }) => {
+          const active = filter === key;
+          return (
+            <button
+              key={key}
+              onClick={() => setFilter(key)}
+              className="text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors"
+              style={active
+                ? { background: accentColor, color: '#fff', borderColor: accentColor }
+                : { background: 'white', color: '#6b7280', borderColor: '#d1d5db' }
+              }
+            >
+              {label}
+            </button>
+          );
+        })}
+        <input
+          type="text"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Buscar por nombre..."
+          className="ml-auto text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-300 min-w-[180px]"
+        />
+      </div>
+
+      {/* Tabla */}
       <div className="overflow-x-auto">
-        <table className="w-full text-sm min-w-[380px]">
-          <thead>
-            <tr className="text-xs text-gray-400 border-b border-gray-100">
-              <th className="text-left pb-2 font-medium">Contacto</th>
-              <th className="text-left pb-2 font-medium">Tarea</th>
-              <th className="text-left pb-2 font-medium">{dateHeader}</th>
-              <th className="text-left pb-2 font-medium">Cerrado</th>
-            </tr>
-          </thead>
-          <tbody>
-            {rows.map((r, i) => (
-              <tr key={i} className="border-b border-gray-50 last:border-0">
-                <td className="py-2 text-gray-700">{r.contacto || '—'}</td>
-                <td className="py-2 max-w-[180px] truncate">
-                  {r.tarea_url
-                    ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
-                    : <span className="text-gray-600">{r.tarea}</span>}
-                </td>
-                <td className="py-2 text-gray-500 whitespace-nowrap">
-                  {tabType === 'seguimiento' ? (r.due_date || '—') : (r.creado || '—')}
-                </td>
-                <td className="py-2 text-gray-500 whitespace-nowrap">{r.cerrado || '—'}</td>
+        {filtered.length === 0 ? (
+          <p className="py-4 text-gray-400 text-center text-sm">Sin registros</p>
+        ) : (
+          <table className="w-full text-sm min-w-[600px]">
+            <thead>
+              <tr className="bg-gray-50 text-gray-500 text-left text-xs uppercase tracking-wide">
+                <th className="px-3 py-2 font-semibold rounded-tl">Contacto</th>
+                <th className="px-3 py-2 font-semibold">Tarea</th>
+                <th className="px-3 py-2 font-semibold">{dateHeader}</th>
+                <th className="px-3 py-2 font-semibold">Cerrado</th>
+                <th className="px-3 py-2 font-semibold">Turno</th>
+                <th className="px-3 py-2 font-semibold text-right rounded-tr">{timeHeader}</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {filtered.map((r, i) => (
+                <tr key={i} className="border-t border-gray-100 hover:bg-gray-50">
+                  <td className="px-3 py-2 font-medium text-gray-800">{r.contacto || '—'}</td>
+                  <td className="px-3 py-2 text-gray-600 max-w-[180px] truncate">
+                    {r.tarea_url
+                      ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
+                      : <span>{r.tarea}</span>}
+                  </td>
+                  <td className="px-3 py-2 text-gray-500 whitespace-nowrap">
+                    {tabType === 'seguimiento' ? (r.due_date || '—') : (r.creado || '—')}
+                  </td>
+                  <td className="px-3 py-2 text-gray-500 whitespace-nowrap">{r.cerrado || '—'}</td>
+                  <td className="px-3 py-2"><TurnoBadge turno={r.turno} /></td>
+                  <td className="px-3 py-2 text-right font-semibold text-gray-700 whitespace-nowrap">
+                    {r.tiempo_min != null ? fmtTiempo(r.tiempo_min) : '—'}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   );
@@ -228,7 +285,6 @@ function StatSection({
   title?: string;
   brand: BrandColors;
 }) {
-  const [modalOpen, setModalOpen] = useState(false);
   const mediaHours = stats.mediana_horas;
   const mediaLabel = mediaHours != null ? `${mediaHours.toFixed(1)} hrs` : '—';
 
@@ -248,8 +304,6 @@ function StatSection({
         />
         <KPICard
           label="Cierre tardío" value={`${stats.pct_tardio}%`} color={brand.kpiTardio} icon="⏰"
-          clickable={stats.cierre_tardio > 0}
-          onClick={() => stats.cierre_tardio > 0 && setModalOpen(true)}
           prevValue={prevEntry ? `${prevEntry.tardio}%` : undefined}
           prevLabel={prevLabel}
           improved={prevEntry ? calcImproved(stats.pct_tardio, prevEntry.tardio, 'down') : undefined}
@@ -310,12 +364,7 @@ function StatSection({
       </div>
 
       {/* Tardíos desplegados */}
-      <TardioInline stats={stats} tabType={tabType} />
-
-      <TardioModal
-        isOpen={modalOpen} onClose={() => setModalOpen(false)}
-        advisor={advisor} type={tabType} rows={stats.tardio_detail} accentColor={brand.kpiTardio}
-      />
+      <TardioInline stats={stats} tabType={tabType} accentColor={brand.kpiTardio} />
     </div>
   );
 }
