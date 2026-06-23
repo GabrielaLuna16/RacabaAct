@@ -87,13 +87,15 @@ function TurnoBadge({ turno }: { turno?: Turno }) {
 
 // ── Inline tardio table ──────────────────────────────────────────────────────
 
-function TardioInline({ stats, brand }: { stats: PCStats | SectionStats; brand: BrandColors }) {
+function TardioInline({ stats, tabType }: { stats: PCStats | SectionStats; tabType: TabType }) {
   if (stats.cierre_tardio === 0) return null;
 
-  type AnyRow = { contacto: string; tarea: string; tarea_url?: string; turno?: Turno; tiempo_min?: number };
-  const rows = [...(stats.tardio_detail as AnyRow[])].sort(
-    (a, b) => (b.tiempo_min ?? 0) - (a.tiempo_min ?? 0)
-  );
+  type AnyRow = {
+    contacto: string; tarea: string; tarea_url?: string;
+    creado?: string; cerrado?: string; due_date?: string;
+  };
+  const rows = stats.tardio_detail as AnyRow[];
+  const dateHeader = tabType === 'seguimiento' ? 'Fecha límite' : 'Creado';
 
   return (
     <div className="mt-4 pt-4 border-t border-gray-200">
@@ -106,8 +108,8 @@ function TardioInline({ stats, brand }: { stats: PCStats | SectionStats; brand: 
             <tr className="text-xs text-gray-400 border-b border-gray-100">
               <th className="text-left pb-2 font-medium">Contacto</th>
               <th className="text-left pb-2 font-medium">Tarea</th>
-              <th className="text-left pb-2 font-medium">Turno</th>
-              <th className="text-right pb-2 font-medium">Tiempo</th>
+              <th className="text-left pb-2 font-medium">{dateHeader}</th>
+              <th className="text-left pb-2 font-medium">Cerrado</th>
             </tr>
           </thead>
           <tbody>
@@ -119,10 +121,10 @@ function TardioInline({ stats, brand }: { stats: PCStats | SectionStats; brand: 
                     ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
                     : <span className="text-gray-600">{r.tarea}</span>}
                 </td>
-                <td className="py-2"><TurnoBadge turno={r.turno} /></td>
-                <td className="py-2 text-right font-semibold text-gray-700 whitespace-nowrap">
-                  {r.tiempo_min != null ? fmtTiempo(r.tiempo_min) : '—'}
+                <td className="py-2 text-gray-500 whitespace-nowrap">
+                  {tabType === 'seguimiento' ? (r.due_date || '—') : (r.creado || '—')}
                 </td>
+                <td className="py-2 text-gray-500 whitespace-nowrap">{r.cerrado || '—'}</td>
               </tr>
             ))}
           </tbody>
@@ -303,7 +305,7 @@ function StatSection({
       </div>
 
       {/* Tardíos desplegados */}
-      <TardioInline stats={stats} brand={brand} />
+      <TardioInline stats={stats} tabType={tabType} />
 
       <TardioModal
         isOpen={modalOpen} onClose={() => setModalOpen(false)}
