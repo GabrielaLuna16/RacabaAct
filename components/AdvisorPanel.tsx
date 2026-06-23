@@ -4,7 +4,7 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import KPICard from './KPICard';
 import TardioModal from './TardioModal';
-import type { AdvisorStats as PCStats, PrimerContactoData } from '@/lib/processPrimerContacto';
+import type { AdvisorStats as PCStats, PrimerContactoData, Turno } from '@/lib/processPrimerContacto';
 import type { SectionStats, HugoAdvisorStats, SeguimientoData } from '@/lib/processSeguimiento';
 
 const DonutChart = dynamic(() => import('./DonutChart'), { ssr: false });
@@ -12,30 +12,25 @@ const DonutChart = dynamic(() => import('./DonutChart'), { ssr: false });
 type TabType = 'primer_contacto' | 'seguimiento';
 
 const REST_DAY_LABEL: Record<string, string> = {
-  'Hugo Cordova': 'Descanso: Martes',
-  'Gladys Favela': 'Descanso: Jueves',
-  'Erick Suarez': 'Descanso: Jueves',
-  'Indira Villegas': 'Descanso: Martes',
+  'Hugo Cordova':   'Descanso: Martes',
+  'Gladys Favela':  'Descanso: Jueves',
+  'Erick Suarez':   'Descanso: Jueves',
+  'Indira Villegas':'Descanso: Martes',
 };
 
 const COMPANY: Record<string, string> = {
-  'Hugo Cordova': 'Bosques de Otay',
-  'Gladys Favela': 'Bosques de Otay',
-  'Erick Suarez': 'Baja Coast Realty',
-  'Indira Villegas': 'Baja Coast Realty',
+  'Hugo Cordova':   'Bosques de Otay',
+  'Gladys Favela':  'Bosques de Otay',
+  'Erick Suarez':   'Baja Coast Realty',
+  'Indira Villegas':'Baja Coast Realty',
 };
 
+const BOSQUES_ADVISORS = new Set(['Hugo Cordova', 'Gladys Favela']);
+
 interface BrandColors {
-  kpiATime: string;
-  kpiTardio: string;
-  kpiNoRealizada: string;
-  kpiMediana: string;
-  headerBg: string;
-  headerBorder: string;
-  avatarFrom: string;
-  avatarTo: string;
-  panelBg: string;
-  accentFont: string;
+  kpiATime: string; kpiTardio: string; kpiNoRealizada: string; kpiMediana: string;
+  headerBg: string; headerBorder: string; avatarFrom: string; avatarTo: string;
+  panelBg: string; accentFont: string;
 }
 
 const BRAND: Record<string, BrandColors> = {
@@ -61,21 +56,93 @@ const BRAND: Record<string, BrandColors> = {
   },
 };
 
+// ── Turno helpers ────────────────────────────────────────────────────────────
+
+function fmtTiempo(min: number): string {
+  if (min < 60) return `${min} min`;
+  if (min < 60 * 24) return `${(min / 60).toFixed(1)} h`;
+  return `${Math.round(min / 1440)} día${min >= 2880 ? 's' : ''}`;
+}
+
+const TURNO_LABEL: Record<Turno, string> = {
+  horario_laboral: 'Horario laboral',
+  fuera_horario:   'Fuera de horario',
+  fin_semana:      'Fin de semana',
+};
+
+const TURNO_STYLE: Record<Turno, string> = {
+  horario_laboral: 'bg-green-50 text-green-700 border border-green-200',
+  fuera_horario:   'bg-amber-50 text-amber-700 border border-amber-200',
+  fin_semana:      'bg-blue-50 text-blue-700 border border-blue-200',
+};
+
+function TurnoBadge({ turno }: { turno?: Turno }) {
+  if (!turno) return null;
+  return (
+    <span className={`text-xs px-2 py-0.5 rounded-full font-medium whitespace-nowrap ${TURNO_STYLE[turno]}`}>
+      {TURNO_LABEL[turno]}
+    </span>
+  );
+}
+
+// ── Inline tardio table ──────────────────────────────────────────────────────
+
+function TardioInline({ stats, brand }: { stats: PCStats | SectionStats; brand: BrandColors }) {
+  if (stats.cierre_tardio === 0) return null;
+
+  type AnyRow = { contacto: string; tarea: string; tarea_url?: string; turno?: Turno; tiempo_min?: number };
+  const rows = [...(stats.tardio_detail as AnyRow[])].sort(
+    (a, b) => (b.tiempo_min ?? 0) - (a.tiempo_min ?? 0)
+  );
+
+  return (
+    <div className="mt-4 pt-4 border-t border-gray-200">
+      <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
+        Actividades con cierre tardío
+      </p>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm min-w-[380px]">
+          <thead>
+            <tr className="text-xs text-gray-400 border-b border-gray-100">
+              <th className="text-left pb-2 font-medium">Contacto</th>
+              <th className="text-left pb-2 font-medium">Tarea</th>
+              <th className="text-left pb-2 font-medium">Turno</th>
+              <th className="text-right pb-2 font-medium">Tiempo</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r, i) => (
+              <tr key={i} className="border-b border-gray-50 last:border-0">
+                <td className="py-2 text-gray-700">{r.contacto || '—'}</td>
+                <td className="py-2 max-w-[180px] truncate">
+                  {r.tarea_url
+                    ? <a href={r.tarea_url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">{r.tarea}</a>
+                    : <span className="text-gray-600">{r.tarea}</span>}
+                </td>
+                <td className="py-2"><TurnoBadge turno={r.turno} /></td>
+                <td className="py-2 text-right font-semibold text-gray-700 whitespace-nowrap">
+                  {r.tiempo_min != null ? fmtTiempo(r.tiempo_min) : '—'}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  );
+}
+
+// ── Comparativa mensual ──────────────────────────────────────────────────────
+
 interface CompareEntry {
-  label: string;
-  month: string;
-  aTime: number;
-  tardio: number;
-  noRealizada: number;
-  mediana: number | null;
+  label: string; month: string;
+  aTime: number; tardio: number; noRealizada: number; mediana: number | null;
 }
 
 function Trend({ delta, better, unit }: { delta: number; better: 'up' | 'down'; unit: '%' | 'h' }) {
   if (Math.abs(delta) < 0.5) return null;
   const isGood = better === 'up' ? delta > 0 : delta < 0;
-  const display = unit === 'h'
-    ? `${Math.abs(delta).toFixed(1)}h`
-    : `${Math.abs(Math.round(delta))}%`;
+  const display = unit === 'h' ? `${Math.abs(delta).toFixed(1)}h` : `${Math.abs(Math.round(delta))}%`;
   return (
     <span className={`ml-1 text-sm font-bold ${isGood ? 'text-green-600' : 'text-red-500'}`}>
       {delta > 0 ? '↑' : '↓'}{display}
@@ -135,18 +202,24 @@ function MonthComparison({ entries, brand }: { entries: CompareEntry[]; brand: B
   );
 }
 
+// ── StatSection ──────────────────────────────────────────────────────────────
+
+type PrevEntry = { aTime: number; tardio: number; noRealizada: number; mediana: number | null } | null;
+
+function calcImproved(curr: number, prev: number, better: 'up' | 'down'): boolean | null {
+  if (curr === prev) return null;
+  return better === 'up' ? curr > prev : curr < prev;
+}
+
 function initials(name: string) {
   return name.split(' ').map(p => p[0]).join('').slice(0, 2).toUpperCase();
 }
 
 function StatSection({
-  stats,
-  advisor,
-  tabType,
-  title,
-  brand,
+  stats, prevEntry, advisor, tabType, title, brand,
 }: {
   stats: PCStats | SectionStats;
+  prevEntry: PrevEntry;
   advisor: string;
   tabType: TabType;
   title?: string;
@@ -164,17 +237,30 @@ function StatSection({
 
       {/* KPI Grid */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-4">
-        <KPICard label="A tiempo" value={`${stats.pct_a_tiempo}%`} color={brand.kpiATime} icon="✅" />
         <KPICard
-          label="Cierre tardío"
-          value={`${stats.pct_tardio}%`}
-          color={brand.kpiTardio}
-          icon="⏰"
+          label="A tiempo" value={`${stats.pct_a_tiempo}%`} color={brand.kpiATime} icon="✅"
+          prevValue={prevEntry ? `${prevEntry.aTime}%` : undefined}
+          improved={prevEntry ? calcImproved(stats.pct_a_tiempo, prevEntry.aTime, 'up') : undefined}
+        />
+        <KPICard
+          label="Cierre tardío" value={`${stats.pct_tardio}%`} color={brand.kpiTardio} icon="⏰"
           clickable={stats.cierre_tardio > 0}
           onClick={() => stats.cierre_tardio > 0 && setModalOpen(true)}
+          prevValue={prevEntry ? `${prevEntry.tardio}%` : undefined}
+          improved={prevEntry ? calcImproved(stats.pct_tardio, prevEntry.tardio, 'down') : undefined}
         />
-        <KPICard label="No realizadas" value={`${stats.pct_no_realizada}%`} color={brand.kpiNoRealizada} icon="⛔" />
-        <KPICard label="Mediana de cierre" value={mediaLabel} color={brand.kpiMediana} icon="🕐" />
+        <KPICard
+          label="No realizadas" value={`${stats.pct_no_realizada}%`} color={brand.kpiNoRealizada} icon="⛔"
+          prevValue={prevEntry ? `${prevEntry.noRealizada}%` : undefined}
+          improved={prevEntry ? calcImproved(stats.pct_no_realizada, prevEntry.noRealizada, 'down') : undefined}
+        />
+        <KPICard
+          label="Mediana de cierre" value={mediaLabel} color={brand.kpiMediana} icon="🕐"
+          prevValue={prevEntry?.mediana != null ? `${prevEntry.mediana.toFixed(1)}h` : undefined}
+          improved={prevEntry?.mediana != null && mediaHours != null
+            ? calcImproved(mediaHours, prevEntry.mediana, 'down')
+            : undefined}
+        />
       </div>
 
       {/* Progress bar */}
@@ -184,22 +270,16 @@ function StatSection({
           <span className="font-semibold" style={{ color: brand.kpiATime }}>{stats.pct_a_tiempo}%</span>
         </div>
         <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
-          <div
-            className="h-full rounded-full transition-all duration-700"
-            style={{ width: `${stats.pct_a_tiempo}%`, background: brand.kpiATime }}
-          />
+          <div className="h-full rounded-full transition-all duration-700"
+            style={{ width: `${stats.pct_a_tiempo}%`, background: brand.kpiATime }} />
         </div>
       </div>
 
       {/* Donut + legend */}
       <div className="flex items-center gap-6">
         <DonutChart
-          aTime={stats.pct_a_tiempo}
-          tardio={stats.pct_tardio}
-          noRealizada={stats.pct_no_realizada}
-          colorATime={brand.kpiATime}
-          colorTardio={brand.kpiTardio}
-          colorNoRealizada={brand.kpiNoRealizada}
+          aTime={stats.pct_a_tiempo} tardio={stats.pct_tardio} noRealizada={stats.pct_no_realizada}
+          colorATime={brand.kpiATime} colorTardio={brand.kpiTardio} colorNoRealizada={brand.kpiNoRealizada}
         />
         <div className="flex flex-col gap-1 text-sm">
           <div className="flex items-center gap-2">
@@ -219,30 +299,31 @@ function StatSection({
               <span className="font-bold ml-1" style={{ color: brand.kpiNoRealizada }}>{stats.pct_no_realizada}%</span>
             </div>
           )}
-
         </div>
       </div>
 
+      {/* Tardíos desplegados */}
+      <TardioInline stats={stats} brand={brand} />
+
       <TardioModal
-        isOpen={modalOpen}
-        onClose={() => setModalOpen(false)}
-        advisor={advisor}
-        type={tabType}
-        rows={stats.tardio_detail}
-        accentColor={brand.kpiTardio}
+        isOpen={modalOpen} onClose={() => setModalOpen(false)}
+        advisor={advisor} type={tabType} rows={stats.tardio_detail} accentColor={brand.kpiTardio}
       />
     </div>
   );
 }
+
+// ── AdvisorPanel ─────────────────────────────────────────────────────────────
 
 interface AdvisorPanelProps {
   advisor: string;
   stats: PCStats | HugoAdvisorStats | SectionStats;
   tabType: TabType;
   allMonthsData: (PrimerContactoData | SeguimientoData)[];
+  currentMonth: string;
 }
 
-export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData }: AdvisorPanelProps) {
+export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, currentMonth }: AdvisorPanelProps) {
   const brand = BRAND[advisor] ?? BRAND['Hugo Cordova'];
   const isHugoSeg = tabType === 'seguimiento' && advisor === 'Hugo Cordova' && 'actividades' in stats;
 
@@ -251,49 +332,47 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData }:
     .sort((a, b) => a.month.localeCompare(b.month))
     .map((d) => {
       const s = d.advisors[advisor];
-      let st: PCStats | SectionStats;
-      if ('actividades' in s) {
-        st = (s as HugoAdvisorStats).actividades;
-      } else {
-        st = s as PCStats | SectionStats;
-      }
+      const st = ('actividades' in s) ? (s as HugoAdvisorStats).actividades : (s as PCStats | SectionStats);
       return {
-        label: d.label,
-        month: d.month,
-        aTime: st.pct_a_tiempo,
-        tardio: st.pct_tardio,
-        noRealizada: st.pct_no_realizada,
-        mediana: st.mediana_horas,
+        label: d.label, month: d.month,
+        aTime: st.pct_a_tiempo, tardio: st.pct_tardio,
+        noRealizada: st.pct_no_realizada, mediana: st.mediana_horas,
       };
     });
 
+  const currentIdx = compareEntries.findIndex((e) => e.month === currentMonth);
+  const prevEntry: PrevEntry = currentIdx > 0 ? compareEntries[currentIdx - 1] : null;
+
   return (
     <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100" style={{ background: brand.panelBg }}>
-      {/* Advisor header */}
-      <div
-        className="flex items-center gap-4 px-6 py-4"
-        style={{ background: brand.headerBg, borderBottom: `1px solid ${brand.headerBorder}` }}
-      >
+      {/* Header */}
+      <div className="flex items-center gap-4 px-6 py-4"
+        style={{ background: brand.headerBg, borderBottom: `1px solid ${brand.headerBorder}` }}>
         <div
           className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg flex-shrink-0"
           style={{ background: `linear-gradient(135deg, ${brand.avatarFrom}, ${brand.avatarTo})` }}
         >
           {initials(advisor)}
         </div>
-        <div>
+        <div className="flex-1">
           <h2 className="text-xl font-bold text-gray-800" style={{ fontFamily: brand.accentFont }}>
             {advisor}
           </h2>
           <div className="flex items-center gap-3 mt-0.5">
             <span className="text-xs text-gray-500">{COMPANY[advisor]}</span>
-            <span
-              className="text-xs px-2 py-0.5 rounded-full font-medium"
-              style={{ background: brand.headerBorder, color: brand.avatarFrom }}
-            >
+            <span className="text-xs px-2 py-0.5 rounded-full font-medium"
+              style={{ background: brand.headerBorder, color: brand.avatarFrom }}>
               {REST_DAY_LABEL[advisor] ?? ''}
             </span>
           </div>
         </div>
+        {BOSQUES_ADVISORS.has(advisor) && (
+          <img
+            src="/logos/bosques-de-otay.png"
+            alt="Bosques de Otay"
+            className="h-10 object-contain opacity-80"
+          />
+        )}
       </div>
 
       {/* Content */}
@@ -302,26 +381,21 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData }:
           <>
             <StatSection
               stats={(stats as HugoAdvisorStats).actividades}
-              advisor={advisor}
-              tabType={tabType}
-              title="Actividades"
-              brand={brand}
+              prevEntry={prevEntry}
+              advisor={advisor} tabType={tabType} title="Actividades" brand={brand}
             />
             <div className="border-t border-gray-200 my-4" />
             <StatSection
               stats={(stats as HugoAdvisorStats).llamadas}
-              advisor={advisor}
-              tabType={tabType}
-              title="Llamadas"
-              brand={brand}
+              prevEntry={null}
+              advisor={advisor} tabType={tabType} title="Llamadas" brand={brand}
             />
           </>
         ) : (
           <StatSection
             stats={stats as PCStats | SectionStats}
-            advisor={advisor}
-            tabType={tabType}
-            brand={brand}
+            prevEntry={prevEntry}
+            advisor={advisor} tabType={tabType} brand={brand}
           />
         )}
         <MonthComparison entries={compareEntries} brand={brand} />

@@ -79,6 +79,7 @@ export default function AdvisorTabs({ data, tabType, allMonthsData }: AdvisorTab
           stats={data.advisors[active]}
           tabType={tabType}
           allMonthsData={allMonthsData}
+          currentMonth={data.month}
         />
       )}
     </div>
