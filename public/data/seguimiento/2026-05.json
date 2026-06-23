@@ -11,7 +11,7 @@
         "pct_a_tiempo": 100,
         "pct_tardio": 0,
         "pct_no_realizada": 0,
-        "mediana_horas": 12.633333333333333,
+        "mediana_horas": 5.024999861111111,
         "tardio_detail": []
       },
       "llamadas": {
@@ -22,7 +22,7 @@
         "pct_a_tiempo": 100,
         "pct_tardio": 0,
         "pct_no_realizada": 0,
-        "mediana_horas": 12.683333333333334,
+        "mediana_horas": 3.974999722222222,
         "tardio_detail": []
       }
     },
@@ -34,7 +34,7 @@
       "pct_a_tiempo": 86,
       "pct_tardio": 9,
       "pct_no_realizada": 5,
-      "mediana_horas": 10.724999722222222,
+      "mediana_horas": 2.216666666666667,
       "tardio_detail": [
         {
           "contacto": "Alejandro Castanedo",
@@ -43,7 +43,7 @@
           "due_date": "20/05/2026",
           "cerrado": "22/05/2026, 09:43",
           "turno": "fuera_horario",
-          "tiempo_min": 3463
+          "tiempo_min": 390
         },
         {
           "contacto": "Hector Najera",
@@ -52,7 +52,7 @@
           "due_date": "10/05/2026",
           "cerrado": "11/05/2026, 11:13",
           "turno": "horario_laboral",
-          "tiempo_min": 2114
+          "tiempo_min": 44
         },
         {
           "contacto": "Natherrera Herrera",
@@ -61,7 +61,7 @@
           "due_date": "20/05/2026",
           "cerrado": "22/05/2026, 09:40",
           "turno": "fuera_horario",
-          "tiempo_min": 3460
+          "tiempo_min": 390
         },
         {
           "contacto": "Juan Carlos",
@@ -70,7 +70,7 @@
           "due_date": "20/05/2026",
           "cerrado": "22/05/2026, 09:39",
           "turno": "fuera_horario",
-          "tiempo_min": 3459
+          "tiempo_min": 390
         },
         {
           "contacto": "Carlos Gutierrez sandoval",
@@ -79,7 +79,7 @@
           "due_date": "20/05/2026",
           "cerrado": "22/05/2026, 09:36",
           "turno": "fuera_horario",
-          "tiempo_min": 3457
+          "tiempo_min": 390
         }
       ]
     },
@@ -91,7 +91,7 @@
       "pct_a_tiempo": 88,
       "pct_tardio": 13,
       "pct_no_realizada": 0,
-      "mediana_horas": 13.049999722222223,
+      "mediana_horas": 3.95,
       "tardio_detail": [
         {
           "contacto": "Jorge isaac farrett Farrett",
@@ -100,7 +100,7 @@
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 11:02",
           "turno": "fin_semana",
-          "tiempo_min": 2102
+          "tiempo_min": 0
         },
         {
           "contacto": "Carol Olona",
@@ -109,7 +109,7 @@
           "due_date": "08/05/2026",
           "cerrado": "09/05/2026, 09:30",
           "turno": "fin_semana",
-          "tiempo_min": 2011
+          "tiempo_min": 420
         },
         {
           "contacto": "Oly Camarena",
@@ -118,7 +118,7 @@
           "due_date": "25/05/2026",
           "cerrado": "26/05/2026, 10:09",
           "turno": "horario_laboral",
-          "tiempo_min": 2049
+          "tiempo_min": 429
         },
         {
           "contacto": "Julio Sesar Limon Sanchez",
@@ -127,7 +127,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 11:09",
           "turno": "fin_semana",
-          "tiempo_min": 2109
+          "tiempo_min": 420
         },
         {
           "contacto": "Cristinna Valle",
@@ -136,7 +136,7 @@
           "due_date": "08/05/2026",
           "cerrado": "09/05/2026, 09:29",
           "turno": "fin_semana",
-          "tiempo_min": 2009
+          "tiempo_min": 420
         }
       ]
     },
@@ -148,7 +148,7 @@
       "pct_a_tiempo": 74,
       "pct_tardio": 26,
       "pct_no_realizada": 0,
-      "mediana_horas": 15.683333055555556,
+      "mediana_horas": 5.9499997222222225,
       "tardio_detail": [
         {
           "contacto": "Patricia Avelar",
@@ -157,7 +157,7 @@
           "due_date": "06/05/2026",
           "cerrado": "07/05/2026, 09:16",
           "turno": "fuera_horario",
-          "tiempo_min": 1996
+          "tiempo_min": 420
         },
         {
           "contacto": "Lucila Elizabeth García Díaz",
@@ -166,7 +166,7 @@
           "due_date": "16/05/2026",
           "cerrado": "17/05/2026, 13:46",
           "turno": "fin_semana",
-          "tiempo_min": 2266
+          "tiempo_min": 0
         },
         {
           "contacto": "Laura Elena Curiel",
@@ -175,7 +175,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 15:08",
           "turno": "fin_semana",
-          "tiempo_min": 2349
+          "tiempo_min": 420
         },
         {
           "contacto": "Jimmy Robert",
@@ -184,7 +184,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 12:59",
           "turno": "fin_semana",
-          "tiempo_min": 2220
+          "tiempo_min": 420
         },
         {
           "contacto": "Maria del Carmen Vazquez",
@@ -193,7 +193,7 @@
           "due_date": "18/05/2026",
           "cerrado": "20/05/2026, 09:17",
           "turno": "fuera_horario",
-          "tiempo_min": 3438
+          "tiempo_min": 420
         },
         {
           "contacto": "Ma Salas",
@@ -202,7 +202,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 13:05",
           "turno": "fin_semana",
-          "tiempo_min": 2225
+          "tiempo_min": 420
         },
         {
           "contacto": "Patricia y Jaime Sánchez",
@@ -211,7 +211,7 @@
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:33",
           "turno": "fin_semana",
-          "tiempo_min": 2073
+          "tiempo_min": 0
         },
         {
           "contacto": "Erika De la Mora",
@@ -220,7 +220,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 11:26",
           "turno": "fin_semana",
-          "tiempo_min": 2126
+          "tiempo_min": 420
         },
         {
           "contacto": "Leonardo de la Mora",
@@ -229,7 +229,7 @@
           "due_date": "18/05/2026",
           "cerrado": "20/05/2026, 09:16",
           "turno": "fuera_horario",
-          "tiempo_min": 3436
+          "tiempo_min": 420
         },
         {
           "contacto": "Jesus Andres Merienne",
@@ -238,7 +238,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:54",
           "turno": "fin_semana",
-          "tiempo_min": 2094
+          "tiempo_min": 420
         },
         {
           "contacto": "Jimmy Robert",
@@ -247,7 +247,7 @@
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:47",
           "turno": "fin_semana",
-          "tiempo_min": 2087
+          "tiempo_min": 0
         },
         {
           "contacto": "Cirilo Metodio Noyola Noyola",
@@ -256,7 +256,7 @@
           "due_date": "17/05/2026",
           "cerrado": "20/05/2026, 09:42",
           "turno": "fuera_horario",
-          "tiempo_min": 4902
+          "tiempo_min": 420
         },
         {
           "contacto": "Marc Carlos",
@@ -265,7 +265,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:53",
           "turno": "fin_semana",
-          "tiempo_min": 2093
+          "tiempo_min": 420
         },
         {
           "contacto": "Carlos Sumohano Ballados",
@@ -274,7 +274,7 @@
           "due_date": "18/05/2026",
           "cerrado": "20/05/2026, 16:47",
           "turno": "horario_laboral",
-          "tiempo_min": 3887
+          "tiempo_min": 827
         },
         {
           "contacto": "Pablo Sergio Aispuro Cárdenas",
@@ -283,7 +283,7 @@
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:43",
           "turno": "fin_semana",
-          "tiempo_min": 2083
+          "tiempo_min": 420
         },
         {
           "contacto": "Lalis Loustaunau",
@@ -292,7 +292,7 @@
           "due_date": "06/05/2026",
           "cerrado": "07/05/2026, 09:11",
           "turno": "fuera_horario",
-          "tiempo_min": 1992
+          "tiempo_min": 420
         },
         {
           "contacto": "Zamir Sultani",
@@ -301,7 +301,7 @@
           "due_date": "18/05/2026",
           "cerrado": "20/05/2026, 09:32",
           "turno": "fuera_horario",
-          "tiempo_min": 3452
+          "tiempo_min": 420
         },
         {
           "contacto": "Bella Noir",
@@ -310,7 +310,7 @@
           "due_date": "31/05/2026",
           "cerrado": "01/06/2026, 12:45",
           "turno": "horario_laboral",
-          "tiempo_min": 2205
+          "tiempo_min": 165
         },
         {
           "contacto": "Hector Martinez",
@@ -319,7 +319,7 @@
           "due_date": "25/05/2026",
           "cerrado": "27/05/2026, 15:51",
           "turno": "horario_laboral",
-          "tiempo_min": 3831
+          "tiempo_min": 771
         },
         {
           "contacto": "Carlos Sumohano Ballados",
@@ -328,7 +328,7 @@
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:46",
           "turno": "fin_semana",
-          "tiempo_min": 2086
+          "tiempo_min": 0
         },
         {
           "contacto": "guatavo corrales wong",
@@ -337,7 +337,7 @@
           "due_date": "06/05/2026",
           "cerrado": "07/05/2026, 09:14",
           "turno": "fuera_horario",
-          "tiempo_min": 1994
+          "tiempo_min": 420
         },
         {
           "contacto": "Irazú Orrantia",
@@ -346,7 +346,7 @@
           "due_date": "15/05/2026",
           "cerrado": "16/05/2026, 15:58",
           "turno": "fin_semana",
-          "tiempo_min": 2398
+          "tiempo_min": 420
         },
         {
           "contacto": "Mtra. Mística Talge Samaha",
@@ -355,7 +355,7 @@
           "due_date": "14/05/2026",
           "cerrado": "16/05/2026, 16:28",
           "turno": "fin_semana",
-          "tiempo_min": 3868
+          "tiempo_min": 840
         },
         {
           "contacto": "Carlos Sumohano Ballados",
@@ -364,7 +364,7 @@
           "due_date": "27/05/2026",
           "cerrado": "28/05/2026, 15:19",
           "turno": "horario_laboral",
-          "tiempo_min": 2359
+          "tiempo_min": 739
         },
         {
           "contacto": "Patricia y Jaime Sánchez",
@@ -373,7 +373,7 @@
           "due_date": "15/05/2026",
           "cerrado": "17/05/2026, 14:28",
           "turno": "fin_semana",
-          "tiempo_min": 3748
+          "tiempo_min": 420
         },
         {
           "contacto": "Alicia Lopez",
@@ -382,7 +382,7 @@
           "due_date": "31/05/2026",
           "cerrado": "01/06/2026, 11:23",
           "turno": "horario_laboral",
-          "tiempo_min": 2123
+          "tiempo_min": 83
         },
         {
           "contacto": "Ray Ortiz",
@@ -391,7 +391,7 @@
           "due_date": "03/05/2026",
           "cerrado": "04/05/2026, 16:38",
           "turno": "horario_laboral",
-          "tiempo_min": 2439
+          "tiempo_min": 399
         }
       ]
     }
