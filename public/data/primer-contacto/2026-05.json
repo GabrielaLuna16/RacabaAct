@@ -57,7 +57,8 @@
           "turno": "horario_laboral",
           "tiempo_min": 379
         }
-      ]
+      ],
+      "no_realizada_detail": []
     },
     "Gladys Favela": {
       "total": 19,
@@ -132,7 +133,8 @@
           "turno": "fuera_horario",
           "tiempo_min": 780
         }
-      ]
+      ],
+      "no_realizada_detail": []
     },
     "Erick Suarez": {
       "total": 26,
@@ -171,7 +173,8 @@
           "turno": "fuera_horario",
           "tiempo_min": 427
         }
-      ]
+      ],
+      "no_realizada_detail": []
     },
     "Indira Villegas": {
       "total": 34,
@@ -201,7 +204,8 @@
           "turno": "horario_laboral",
           "tiempo_min": 21
         }
-      ]
+      ],
+      "no_realizada_detail": []
     }
   }
 }
