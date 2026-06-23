@@ -11,7 +11,7 @@
         "pct_a_tiempo": 100,
         "pct_tardio": 0,
         "pct_no_realizada": 0,
-        "mediana_horas": 5.024999861111111,
+        "mediana_horas": 2.6166666666666667,
         "tardio_detail": [],
         "no_realizada_detail": []
       },
@@ -23,7 +23,7 @@
         "pct_a_tiempo": 100,
         "pct_tardio": 0,
         "pct_no_realizada": 0,
-        "mediana_horas": 3.974999722222222,
+        "mediana_horas": 3.15,
         "tardio_detail": [],
         "no_realizada_detail": []
       }
@@ -36,7 +36,7 @@
       "pct_a_tiempo": 86,
       "pct_tardio": 9,
       "pct_no_realizada": 5,
-      "mediana_horas": 2.216666666666667,
+      "mediana_horas": 2.083333194444444,
       "tardio_detail": [
         {
           "contacto": "Alejandro Castanedo",
@@ -54,7 +54,7 @@
           "due_date": "10/05/2026",
           "cerrado": "11/05/2026, 11:13",
           "turno": "horario_laboral",
-          "tiempo_min": 44
+          "tiempo_min": 434
         },
         {
           "contacto": "Natherrera Herrera",
@@ -113,7 +113,7 @@
       "pct_a_tiempo": 88,
       "pct_tardio": 13,
       "pct_no_realizada": 0,
-      "mediana_horas": 3.95,
+      "mediana_horas": 3.8666666666666667,
       "tardio_detail": [
         {
           "contacto": "Jorge isaac farrett Farrett",
@@ -121,8 +121,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017217015",
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 11:02",
-          "turno": "fin_semana",
-          "tiempo_min": 0
+          "turno": "horario_laboral",
+          "tiempo_min": 482
         },
         {
           "contacto": "Carol Olona",
@@ -130,7 +130,7 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017200004",
           "due_date": "08/05/2026",
           "cerrado": "09/05/2026, 09:30",
-          "turno": "fin_semana",
+          "turno": "fuera_horario",
           "tiempo_min": 420
         },
         {
@@ -148,8 +148,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016586003",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 11:09",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 489
         },
         {
           "contacto": "Cristinna Valle",
@@ -157,7 +157,7 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017226003",
           "due_date": "08/05/2026",
           "cerrado": "09/05/2026, 09:29",
-          "turno": "fin_semana",
+          "turno": "fuera_horario",
           "tiempo_min": 420
         }
       ],
@@ -188,8 +188,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017797003",
           "due_date": "16/05/2026",
           "cerrado": "17/05/2026, 13:46",
-          "turno": "fin_semana",
-          "tiempo_min": 0
+          "turno": "horario_laboral",
+          "tiempo_min": 646
         },
         {
           "contacto": "Laura Elena Curiel",
@@ -197,8 +197,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016590030",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 15:08",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 729
         },
         {
           "contacto": "Jimmy Robert",
@@ -206,8 +206,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016582021",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 12:59",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 600
         },
         {
           "contacto": "Maria del Carmen Vazquez",
@@ -224,8 +224,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016549009",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 13:05",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 605
         },
         {
           "contacto": "Patricia y Jaime Sánchez",
@@ -233,8 +233,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016862004",
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:33",
-          "turno": "fin_semana",
-          "tiempo_min": 0
+          "turno": "horario_laboral",
+          "tiempo_min": 453
         },
         {
           "contacto": "Erika De la Mora",
@@ -242,8 +242,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016569012",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 11:26",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 506
         },
         {
           "contacto": "Leonardo de la Mora",
@@ -260,8 +260,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016599007",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:54",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 474
         },
         {
           "contacto": "Jimmy Robert",
@@ -269,8 +269,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017080005",
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:47",
-          "turno": "fin_semana",
-          "tiempo_min": 0
+          "turno": "horario_laboral",
+          "tiempo_min": 467
         },
         {
           "contacto": "Cirilo Metodio Noyola Noyola",
@@ -279,7 +279,7 @@
           "due_date": "17/05/2026",
           "cerrado": "20/05/2026, 09:42",
           "turno": "fuera_horario",
-          "tiempo_min": 420
+          "tiempo_min": 840
         },
         {
           "contacto": "Marc Carlos",
@@ -287,8 +287,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000011923028",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:53",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 473
         },
         {
           "contacto": "Carlos Sumohano Ballados",
@@ -305,8 +305,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016550008",
           "due_date": "01/05/2026",
           "cerrado": "02/05/2026, 10:43",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 463
         },
         {
           "contacto": "Lalis Loustaunau",
@@ -333,7 +333,7 @@
           "due_date": "31/05/2026",
           "cerrado": "01/06/2026, 12:45",
           "turno": "horario_laboral",
-          "tiempo_min": 165
+          "tiempo_min": 585
         },
         {
           "contacto": "Hector Martinez",
@@ -350,8 +350,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017221011",
           "due_date": "09/05/2026",
           "cerrado": "10/05/2026, 10:46",
-          "turno": "fin_semana",
-          "tiempo_min": 0
+          "turno": "horario_laboral",
+          "tiempo_min": 466
         },
         {
           "contacto": "guatavo corrales wong",
@@ -368,8 +368,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017457015",
           "due_date": "15/05/2026",
           "cerrado": "16/05/2026, 15:58",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 778
         },
         {
           "contacto": "Mtra. Mística Talge Samaha",
@@ -377,8 +377,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017477008",
           "due_date": "14/05/2026",
           "cerrado": "16/05/2026, 16:28",
-          "turno": "fin_semana",
-          "tiempo_min": 840
+          "turno": "horario_laboral",
+          "tiempo_min": 1228
         },
         {
           "contacto": "Carlos Sumohano Ballados",
@@ -395,8 +395,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017788006",
           "due_date": "15/05/2026",
           "cerrado": "17/05/2026, 14:28",
-          "turno": "fin_semana",
-          "tiempo_min": 420
+          "turno": "horario_laboral",
+          "tiempo_min": 1108
         },
         {
           "contacto": "Alicia Lopez",
@@ -405,7 +405,7 @@
           "due_date": "31/05/2026",
           "cerrado": "01/06/2026, 11:23",
           "turno": "horario_laboral",
-          "tiempo_min": 83
+          "tiempo_min": 503
         },
         {
           "contacto": "Ray Ortiz",
@@ -414,7 +414,7 @@
           "due_date": "03/05/2026",
           "cerrado": "04/05/2026, 16:38",
           "turno": "horario_laboral",
-          "tiempo_min": 399
+          "tiempo_min": 819
         }
       ],
       "no_realizada_detail": []
