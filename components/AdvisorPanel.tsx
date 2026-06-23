@@ -406,7 +406,6 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, c
             advisor={advisor} tabType={tabType} brand={brand}
           />
         )}
-        <MonthComparison entries={compareEntries} brand={brand} />
       </div>
     </div>
   );

@@ -25,19 +25,19 @@ export default function KPICard({ label, value, color, onClick, clickable, icon,
       </span>
       <div className="flex items-baseline gap-2">
         <span className="text-2xl font-bold" style={{ color }}>{value}</span>
-        {prevValue != null && (
-          <span className={`text-sm font-bold ${improved === true ? 'text-green-600' : improved === false ? 'text-red-500' : 'text-gray-400'}`}>
-            {improved === true ? '↑' : improved === false ? '↓' : '—'}
-            {improved != null && (() => {
-              const curr = parseFloat(value);
-              const prev = parseFloat(prevValue);
-              const diff = Math.abs(curr - prev);
-              return value.includes('h') || prevValue.includes('h')
-                ? `${diff.toFixed(1)}h`
-                : `${Math.round(diff)}%`;
-            })()}
-          </span>
-        )}
+        {prevValue != null && improved != null && (() => {
+          const curr = parseFloat(value);
+          const prev = parseFloat(prevValue);
+          const delta = curr - prev;
+          if (Math.abs(delta) < 0.05) return null;
+          const isHours = value.includes('h') || prevValue.includes('h');
+          const diffStr = isHours ? `${Math.abs(delta).toFixed(1)}h` : `${Math.round(Math.abs(delta))}%`;
+          const arrow = delta > 0 ? '↑' : '↓';
+          const colorClass = improved === true ? 'text-green-600' : 'text-red-500';
+          return (
+            <span className={`text-sm font-bold ${colorClass}`}>{arrow}{diffStr}</span>
+          );
+        })()}
       </div>
       {prevValue != null && prevLabel && (
         <div className="flex items-center gap-1 pt-1 border-t border-gray-100 mt-1">
