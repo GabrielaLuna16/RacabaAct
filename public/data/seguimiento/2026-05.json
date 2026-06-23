@@ -41,35 +41,45 @@
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017953010",
           "due_date": "20/05/2026",
-          "cerrado": "22/05/2026"
+          "cerrado": "22/05/2026, 09:43",
+          "turno": "fuera_horario",
+          "tiempo_min": 3463
         },
         {
           "contacto": "Hector Najera",
           "tarea": "Seguimiento",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017449004",
           "due_date": "10/05/2026",
-          "cerrado": "11/05/2026"
+          "cerrado": "11/05/2026, 11:13",
+          "turno": "horario_laboral",
+          "tiempo_min": 2114
         },
         {
           "contacto": "Natherrera Herrera",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017762003",
           "due_date": "20/05/2026",
-          "cerrado": "22/05/2026"
+          "cerrado": "22/05/2026, 09:40",
+          "turno": "fuera_horario",
+          "tiempo_min": 3460
         },
         {
           "contacto": "Juan Carlos",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017779003",
           "due_date": "20/05/2026",
-          "cerrado": "22/05/2026"
+          "cerrado": "22/05/2026, 09:39",
+          "turno": "fuera_horario",
+          "tiempo_min": 3459
         },
         {
           "contacto": "Carlos Gutierrez sandoval",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017774003",
           "due_date": "20/05/2026",
-          "cerrado": "22/05/2026"
+          "cerrado": "22/05/2026, 09:36",
+          "turno": "fuera_horario",
+          "tiempo_min": 3457
         }
       ]
     },
@@ -88,35 +98,45 @@
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017217015",
           "due_date": "09/05/2026",
-          "cerrado": "10/05/2026"
+          "cerrado": "10/05/2026, 11:02",
+          "turno": "fin_semana",
+          "tiempo_min": 2102
         },
         {
           "contacto": "Carol Olona",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017200004",
           "due_date": "08/05/2026",
-          "cerrado": "09/05/2026"
+          "cerrado": "09/05/2026, 09:30",
+          "turno": "fin_semana",
+          "tiempo_min": 2011
         },
         {
           "contacto": "Oly Camarena",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018174005",
           "due_date": "25/05/2026",
-          "cerrado": "26/05/2026"
+          "cerrado": "26/05/2026, 10:09",
+          "turno": "horario_laboral",
+          "tiempo_min": 2049
         },
         {
           "contacto": "Julio Sesar Limon Sanchez",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016586003",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "cerrado": "02/05/2026, 11:09",
+          "turno": "fin_semana",
+          "tiempo_min": 2109
         },
         {
           "contacto": "Cristinna Valle",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017226003",
           "due_date": "08/05/2026",
-          "cerrado": "09/05/2026"
+          "cerrado": "09/05/2026, 09:29",
+          "turno": "fin_semana",
+          "tiempo_min": 2009
         }
       ]
     },
@@ -131,193 +151,247 @@
       "mediana_horas": 15.683333055555556,
       "tardio_detail": [
         {
+          "contacto": "Patricia Avelar",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016740017",
+          "due_date": "06/05/2026",
+          "cerrado": "07/05/2026, 09:16",
+          "turno": "fuera_horario",
+          "tiempo_min": 1996
+        },
+        {
           "contacto": "Lucila Elizabeth García Díaz",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017797003",
           "due_date": "16/05/2026",
-          "cerrado": "17/05/2026"
+          "cerrado": "17/05/2026, 13:46",
+          "turno": "fin_semana",
+          "tiempo_min": 2266
         },
         {
           "contacto": "Laura Elena Curiel",
           "tarea": "Seguimiento 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016590030",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
-        },
-        {
-          "contacto": "Patricia Avelar",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016740017",
-          "due_date": "06/05/2026",
-          "cerrado": "07/05/2026"
-        },
-        {
-          "contacto": "Maria del Carmen Vazquez",
-          "tarea": "Seguir Contactando 2",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017752005",
-          "due_date": "18/05/2026",
-          "cerrado": "20/05/2026"
-        },
-        {
-          "contacto": "Ma Salas",
-          "tarea": "Seguimiento 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016549009",
-          "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "cerrado": "02/05/2026, 15:08",
+          "turno": "fin_semana",
+          "tiempo_min": 2349
         },
         {
           "contacto": "Jimmy Robert",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016582021",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "cerrado": "02/05/2026, 12:59",
+          "turno": "fin_semana",
+          "tiempo_min": 2220
+        },
+        {
+          "contacto": "Maria del Carmen Vazquez",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017752005",
+          "due_date": "18/05/2026",
+          "cerrado": "20/05/2026, 09:17",
+          "turno": "fuera_horario",
+          "tiempo_min": 3438
+        },
+        {
+          "contacto": "Ma Salas",
+          "tarea": "Seguimiento 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016549009",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 13:05",
+          "turno": "fin_semana",
+          "tiempo_min": 2225
         },
         {
           "contacto": "Patricia y Jaime Sánchez",
           "tarea": "Seguimiento 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016862004",
           "due_date": "09/05/2026",
-          "cerrado": "10/05/2026"
+          "cerrado": "10/05/2026, 10:33",
+          "turno": "fin_semana",
+          "tiempo_min": 2073
         },
         {
           "contacto": "Erika De la Mora",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016569012",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "cerrado": "02/05/2026, 11:26",
+          "turno": "fin_semana",
+          "tiempo_min": 2126
         },
         {
           "contacto": "Leonardo de la Mora",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017801004",
           "due_date": "18/05/2026",
-          "cerrado": "20/05/2026"
+          "cerrado": "20/05/2026, 09:16",
+          "turno": "fuera_horario",
+          "tiempo_min": 3436
         },
         {
           "contacto": "Jesus Andres Merienne",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016599007",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "cerrado": "02/05/2026, 10:54",
+          "turno": "fin_semana",
+          "tiempo_min": 2094
         },
         {
           "contacto": "Jimmy Robert",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017080005",
           "due_date": "09/05/2026",
-          "cerrado": "10/05/2026"
+          "cerrado": "10/05/2026, 10:47",
+          "turno": "fin_semana",
+          "tiempo_min": 2087
         },
         {
           "contacto": "Cirilo Metodio Noyola Noyola",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016356051",
           "due_date": "17/05/2026",
-          "cerrado": "20/05/2026"
+          "cerrado": "20/05/2026, 09:42",
+          "turno": "fuera_horario",
+          "tiempo_min": 4902
         },
         {
           "contacto": "Marc Carlos",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000011923028",
           "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
-        },
-        {
-          "contacto": "Pablo Sergio Aispuro Cárdenas",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016550008",
-          "due_date": "01/05/2026",
-          "cerrado": "02/05/2026"
-        },
-        {
-          "contacto": "Lalis Loustaunau",
-          "tarea": "Seguir Contactando",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017043007",
-          "due_date": "06/05/2026",
-          "cerrado": "07/05/2026"
+          "cerrado": "02/05/2026, 10:53",
+          "turno": "fin_semana",
+          "tiempo_min": 2093
         },
         {
           "contacto": "Carlos Sumohano Ballados",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017485013",
           "due_date": "18/05/2026",
-          "cerrado": "20/05/2026"
+          "cerrado": "20/05/2026, 16:47",
+          "turno": "horario_laboral",
+          "tiempo_min": 3887
+        },
+        {
+          "contacto": "Pablo Sergio Aispuro Cárdenas",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016550008",
+          "due_date": "01/05/2026",
+          "cerrado": "02/05/2026, 10:43",
+          "turno": "fin_semana",
+          "tiempo_min": 2083
+        },
+        {
+          "contacto": "Lalis Loustaunau",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017043007",
+          "due_date": "06/05/2026",
+          "cerrado": "07/05/2026, 09:11",
+          "turno": "fuera_horario",
+          "tiempo_min": 1992
         },
         {
           "contacto": "Zamir Sultani",
           "tarea": "Seguimiento",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017945016",
           "due_date": "18/05/2026",
-          "cerrado": "20/05/2026"
+          "cerrado": "20/05/2026, 09:32",
+          "turno": "fuera_horario",
+          "tiempo_min": 3452
         },
         {
           "contacto": "Bella Noir",
           "tarea": "Seguimiento",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018784005",
           "due_date": "31/05/2026",
-          "cerrado": "01/06/2026"
+          "cerrado": "01/06/2026, 12:45",
+          "turno": "horario_laboral",
+          "tiempo_min": 2205
         },
         {
           "contacto": "Hector Martinez",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018189015",
           "due_date": "25/05/2026",
-          "cerrado": "27/05/2026"
+          "cerrado": "27/05/2026, 15:51",
+          "turno": "horario_laboral",
+          "tiempo_min": 3831
         },
         {
           "contacto": "Carlos Sumohano Ballados",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017221011",
           "due_date": "09/05/2026",
-          "cerrado": "10/05/2026"
+          "cerrado": "10/05/2026, 10:46",
+          "turno": "fin_semana",
+          "tiempo_min": 2086
         },
         {
           "contacto": "guatavo corrales wong",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017013003",
           "due_date": "06/05/2026",
-          "cerrado": "07/05/2026"
+          "cerrado": "07/05/2026, 09:14",
+          "turno": "fuera_horario",
+          "tiempo_min": 1994
         },
         {
           "contacto": "Irazú Orrantia",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017457015",
           "due_date": "15/05/2026",
-          "cerrado": "16/05/2026"
+          "cerrado": "16/05/2026, 15:58",
+          "turno": "fin_semana",
+          "tiempo_min": 2398
         },
         {
           "contacto": "Mtra. Mística Talge Samaha",
           "tarea": "Seguir Contactando 2",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017477008",
           "due_date": "14/05/2026",
-          "cerrado": "16/05/2026"
-        },
-        {
-          "contacto": "Patricia y Jaime Sánchez",
-          "tarea": "Seguimiento",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017788006",
-          "due_date": "15/05/2026",
-          "cerrado": "17/05/2026"
-        },
-        {
-          "contacto": "Alicia Lopez",
-          "tarea": "Seguir Contactando",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018780003",
-          "due_date": "31/05/2026",
-          "cerrado": "01/06/2026"
-        },
-        {
-          "contacto": "Ray Ortiz",
-          "tarea": "Seguir Contactando",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016877005",
-          "due_date": "03/05/2026",
-          "cerrado": "04/05/2026"
+          "cerrado": "16/05/2026, 16:28",
+          "turno": "fin_semana",
+          "tiempo_min": 3868
         },
         {
           "contacto": "Carlos Sumohano Ballados",
           "tarea": "Seguir Contactando 3",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018170017",
           "due_date": "27/05/2026",
-          "cerrado": "28/05/2026"
+          "cerrado": "28/05/2026, 15:19",
+          "turno": "horario_laboral",
+          "tiempo_min": 2359
+        },
+        {
+          "contacto": "Patricia y Jaime Sánchez",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017788006",
+          "due_date": "15/05/2026",
+          "cerrado": "17/05/2026, 14:28",
+          "turno": "fin_semana",
+          "tiempo_min": 3748
+        },
+        {
+          "contacto": "Alicia Lopez",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018780003",
+          "due_date": "31/05/2026",
+          "cerrado": "01/06/2026, 11:23",
+          "turno": "horario_laboral",
+          "tiempo_min": 2123
+        },
+        {
+          "contacto": "Ray Ortiz",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016877005",
+          "due_date": "03/05/2026",
+          "cerrado": "04/05/2026, 16:38",
+          "turno": "horario_laboral",
+          "tiempo_min": 2439
         }
       ]
     }
