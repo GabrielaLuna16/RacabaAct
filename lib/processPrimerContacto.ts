@@ -37,7 +37,8 @@ function workingHoursBetween(created: Date, closed: Date, advisor: string): numb
   let total = 0;
   let day = new Date(Date.UTC(created.getUTCFullYear(), created.getUTCMonth(), created.getUTCDate()));
   while (day.getTime() < closed.getTime()) {
-    if (day.getUTCDay() !== restDay) {
+    const dow = day.getUTCDay();
+    if (dow !== 0 && dow !== 6 && dow !== restDay) {
       const winStart = Math.max(created.getTime(), day.getTime() + startHour * 3600000);
       const winEnd   = Math.min(closed.getTime(),  day.getTime() + WORK_END  * 3600000);
       if (winStart < winEnd) total += (winEnd - winStart) / 3600000;
@@ -185,7 +186,7 @@ export function processPrimerContacto(
     } else {
       data.counts.cierre_tardio++;
       const turno = getTurno(created, advisor);
-      const tiempo_min = Math.max(0, Math.round((closed.getTime() - created.getTime()) / 60000));
+      const tiempo_min = Math.round(workingHoursBetween(created, closed, advisor) * 60);
       data.tardio.push({
         contacto: contact,
         tarea: subject,

@@ -25,6 +25,24 @@ function getTurno(dt: Date, advisor: string): Turno {
   return h >= start && h < WORK_END ? 'horario_laboral' : 'fuera_horario';
 }
 
+function workingHoursBetween(start: Date, end: Date, advisor: string): number {
+  if (end.getTime() <= start.getTime()) return 0;
+  const startHour = WORK_START[advisor] ?? 10;
+  const restDay = REST_DAYS[advisor] ?? -1;
+  let total = 0;
+  let day = new Date(Date.UTC(start.getUTCFullYear(), start.getUTCMonth(), start.getUTCDate()));
+  while (day.getTime() < end.getTime()) {
+    const dow = day.getUTCDay();
+    if (dow !== 0 && dow !== 6 && dow !== restDay) {
+      const winStart = Math.max(start.getTime(), day.getTime() + startHour * 3600000);
+      const winEnd   = Math.min(end.getTime(),   day.getTime() + WORK_END  * 3600000);
+      if (winStart < winEnd) total += (winEnd - winStart) / 3600000;
+    }
+    day = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate() + 1));
+  }
+  return total;
+}
+
 function addDays(d: Date, n: number): Date {
   const r = new Date(d);
   r.setUTCDate(r.getUTCDate() + n);
@@ -174,16 +192,16 @@ export function processSeguimiento(
       closed.getUTCFullYear(), closed.getUTCMonth(), closed.getUTCDate()
     ));
 
-    // Hours between dueDate (start of day) and closed
-    const hours = (closed.getTime() - dueDateOnly.getTime()) / 3600000;
-    if (hours >= 0) section.closingHours.push(hours);
+    // Horas laborales entre inicio del día de vencimiento y cierre
+    const hours = workingHoursBetween(dueDateOnly, closed, advisor);
+    if (hours > 0) section.closingHours.push(hours);
 
     if (closedDateOnly <= effectiveDue) {
       section.counts.a_tiempo++;
     } else {
       section.counts.cierre_tardio++;
       const turno = getTurno(closed, advisor);
-      const tiempo_min = Math.max(0, Math.round((closed.getTime() - dueDateOnly.getTime()) / 60000));
+      const tiempo_min = Math.round(workingHoursBetween(dueDateOnly, closed, advisor) * 60);
       section.tardio.push({
         contacto: contact,
         tarea: subject,
