@@ -25,7 +25,7 @@ export default function Dashboard() {
 
   // Load months index
   useEffect(() => {
-    fetch('/data/months.json')
+    fetch('/data/months.json', { cache: 'no-store' })
       .then((r) => r.ok ? r.json() : [])
       .then((m: string[]) => {
         setMonths(m);
@@ -38,10 +38,10 @@ export default function Dashboard() {
   useEffect(() => {
     if (months.length === 0) return;
     Promise.all(months.map((m) =>
-      fetch(`/data/primer-contacto/${m}.json`).then((r) => r.ok ? r.json() : null)
+      fetch(`/data/primer-contacto/${m}.json`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : null)
     )).then((results) => setAllPcData(results.filter(Boolean) as PrimerContactoData[]));
     Promise.all(months.map((m) =>
-      fetch(`/data/seguimiento/${m}.json`).then((r) => r.ok ? r.json() : null)
+      fetch(`/data/seguimiento/${m}.json`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : null)
     )).then((results) => setAllSegData(results.filter(Boolean) as SeguimientoData[]));
   }, [months]);
 
@@ -52,8 +52,8 @@ export default function Dashboard() {
     setSegData(null);
 
     Promise.all([
-      fetch(`/data/primer-contacto/${selectedMonth}.json`).then((r) => r.ok ? r.json() : null),
-      fetch(`/data/seguimiento/${selectedMonth}.json`).then((r) => r.ok ? r.json() : null),
+      fetch(`/data/primer-contacto/${selectedMonth}.json`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : null),
+      fetch(`/data/seguimiento/${selectedMonth}.json`, { cache: 'no-store' }).then((r) => r.ok ? r.json() : null),
     ]).then(([pc, seg]) => {
       setPcData(pc);
       setSegData(seg);
