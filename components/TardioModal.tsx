@@ -43,7 +43,7 @@ function fmtTiempo(min: number): string {
 const TURNO_LABEL: Record<Turno, string> = {
   horario_laboral: 'Horario laboral',
   fuera_horario:   'Fuera de horario',
-  fin_semana:      'Fin de semana',
+  fin_semana:      'Día de descanso',
 };
 
 const TURNO_STYLE: Record<Turno, string> = {
@@ -65,7 +65,7 @@ const FILTERS: { key: Filter; label: string }[] = [
   { key: 'todos',           label: 'TODOS' },
   { key: 'horario_laboral', label: 'HORARIO LABORAL' },
   { key: 'fuera_horario',   label: 'FUERA DE HORARIO L-V' },
-  { key: 'fin_semana',      label: 'FIN DE SEMANA' },
+  { key: 'fin_semana',      label: 'DÍA DE DESCANSO' },
 ];
 
 export default function TardioModal({ isOpen, onClose, advisor, type, rows, accentColor }: TardioModalProps) {

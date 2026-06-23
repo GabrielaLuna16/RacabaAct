@@ -23,7 +23,7 @@ export type Turno = 'horario_laboral' | 'fuera_horario' | 'fin_semana';
 function getTurno(dt: Date, advisor: string): Turno {
   const dow = dt.getUTCDay();
   const restDay = REST_DAYS[advisor] ?? -1;
-  if (dow === 0 || dow === 6 || dow === restDay) return 'fin_semana';
+  if (dow === restDay) return 'fin_semana';
   const h = dt.getUTCHours() + dt.getUTCMinutes() / 60;
   const start = WORK_START[advisor] ?? 10;
   return h >= start && h < WORK_END ? 'horario_laboral' : 'fuera_horario';
@@ -38,7 +38,7 @@ function workingHoursBetween(created: Date, closed: Date, advisor: string): numb
   let day = new Date(Date.UTC(created.getUTCFullYear(), created.getUTCMonth(), created.getUTCDate()));
   while (day.getTime() < closed.getTime()) {
     const dow = day.getUTCDay();
-    if (dow !== 0 && dow !== 6 && dow !== restDay) {
+    if (dow !== restDay) {
       const winStart = Math.max(created.getTime(), day.getTime() + startHour * 3600000);
       const winEnd   = Math.min(closed.getTime(),  day.getTime() + WORK_END  * 3600000);
       if (winStart < winEnd) total += (winEnd - winStart) / 3600000;
