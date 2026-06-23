@@ -16,36 +16,46 @@
           "contacto": "Jose de Dejesus Perez Leo",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018195008",
-          "creado": "20/05/2026",
-          "cerrado": "21/05/2026"
+          "creado": "20/05/2026, 16:20",
+          "cerrado": "21/05/2026, 11:35",
+          "turno": "horario_laboral",
+          "tiempo_min": 1155
         },
         {
           "contacto": "Lorena Heredia",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018666016",
-          "creado": "27/05/2026",
-          "cerrado": "28/05/2026"
+          "creado": "27/05/2026, 16:54",
+          "cerrado": "28/05/2026, 11:15",
+          "turno": "horario_laboral",
+          "tiempo_min": 1101
         },
         {
           "contacto": "Elizabeth Htx",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016860025",
-          "creado": "01/05/2026",
-          "cerrado": "02/05/2026"
+          "creado": "01/05/2026, 16:21",
+          "cerrado": "02/05/2026, 12:23",
+          "turno": "horario_laboral",
+          "tiempo_min": 1202
         },
         {
           "contacto": "Judith Flores Ames",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018692005",
-          "creado": "27/05/2026",
-          "cerrado": "28/05/2026"
+          "creado": "27/05/2026, 16:56",
+          "cerrado": "28/05/2026, 11:51",
+          "turno": "horario_laboral",
+          "tiempo_min": 1135
         },
         {
           "contacto": "Josue Quintero",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018691004",
-          "creado": "27/05/2026",
-          "cerrado": "28/05/2026"
+          "creado": "27/05/2026, 11:08",
+          "cerrado": "28/05/2026, 10:57",
+          "turno": "horario_laboral",
+          "tiempo_min": 1429
         }
       ]
     },
@@ -60,53 +70,67 @@
       "mediana_horas": 6.049999722222222,
       "tardio_detail": [
         {
-          "contacto": "Arlette Espinoza",
-          "tarea": "Actividad Contactar Inmediato",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017983024",
-          "creado": "18/05/2026",
-          "cerrado": "22/05/2026"
-        },
-        {
           "contacto": "Letrushka Hernandez",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018509013",
-          "creado": "25/05/2026",
-          "cerrado": "27/05/2026"
+          "creado": "25/05/2026, 20:34",
+          "cerrado": "27/05/2026, 09:52",
+          "turno": "fuera_horario",
+          "tiempo_min": 2238
+        },
+        {
+          "contacto": "Arlette Espinoza",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017983024",
+          "creado": "18/05/2026, 22:23",
+          "cerrado": "22/05/2026, 09:29",
+          "turno": "fuera_horario",
+          "tiempo_min": 4986
         },
         {
           "contacto": "Josue Hernandez",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018502027",
-          "creado": "25/05/2026",
-          "cerrado": "27/05/2026"
+          "creado": "25/05/2026, 19:47",
+          "cerrado": "27/05/2026, 09:49",
+          "turno": "fuera_horario",
+          "tiempo_min": 2282
         },
         {
           "contacto": "Alejandro Castanedo",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017606003",
-          "creado": "11/05/2026",
-          "cerrado": "12/05/2026"
+          "creado": "11/05/2026, 14:51",
+          "cerrado": "12/05/2026, 14:23",
+          "turno": "horario_laboral",
+          "tiempo_min": 1413
         },
         {
           "contacto": "Carlos Gutierrez sandoval",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017005014",
-          "creado": "02/05/2026",
-          "cerrado": "05/05/2026"
+          "creado": "02/05/2026, 22:47",
+          "cerrado": "05/05/2026, 14:23",
+          "turno": "fin_semana",
+          "tiempo_min": 3816
         },
         {
           "contacto": "Bring Chateau",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018119003",
-          "creado": "19/05/2026",
-          "cerrado": "22/05/2026"
+          "creado": "19/05/2026, 00:23",
+          "cerrado": "22/05/2026, 09:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 4870
         },
         {
           "contacto": "Skarlett Gro Landeros Cosmetóloga",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017969036",
-          "creado": "18/05/2026",
-          "cerrado": "22/05/2026"
+          "creado": "18/05/2026, 20:23",
+          "cerrado": "22/05/2026, 09:23",
+          "turno": "fuera_horario",
+          "tiempo_min": 5100
         }
       ]
     },
@@ -124,22 +148,28 @@
           "contacto": "Timothy Mcgehee",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017381004",
-          "creado": "08/05/2026",
-          "cerrado": "09/05/2026"
+          "creado": "08/05/2026, 01:04",
+          "cerrado": "09/05/2026, 09:20",
+          "turno": "fuera_horario",
+          "tiempo_min": 1937
         },
         {
           "contacto": "José Ortiz",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017626003",
-          "creado": "11/05/2026",
-          "cerrado": "12/05/2026"
+          "creado": "11/05/2026, 16:18",
+          "cerrado": "12/05/2026, 09:24",
+          "turno": "horario_laboral",
+          "tiempo_min": 1025
         },
         {
           "contacto": "Fausto Millan",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018495011",
-          "creado": "25/05/2026",
-          "cerrado": "26/05/2026"
+          "creado": "25/05/2026, 07:20",
+          "cerrado": "26/05/2026, 10:07",
+          "turno": "fuera_horario",
+          "tiempo_min": 1607
         }
       ]
     },
@@ -157,15 +187,19 @@
           "contacto": "Antonio López López",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017006003",
-          "creado": "02/05/2026",
-          "cerrado": "04/05/2026"
+          "creado": "02/05/2026, 06:53",
+          "cerrado": "04/05/2026, 15:32",
+          "turno": "fin_semana",
+          "tiempo_min": 3399
         },
         {
           "contacto": "Pepe Prado",
           "tarea": "Actividad Contactar Inmediato",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018329005",
-          "creado": "21/05/2026",
-          "cerrado": "22/05/2026"
+          "creado": "21/05/2026, 16:47",
+          "cerrado": "22/05/2026, 10:09",
+          "turno": "horario_laboral",
+          "tiempo_min": 1041
         }
       ]
     }
