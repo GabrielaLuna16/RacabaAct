@@ -218,10 +218,11 @@ function initials(name: string) {
 }
 
 function StatSection({
-  stats, prevEntry, advisor, tabType, title, brand,
+  stats, prevEntry, prevLabel, advisor, tabType, title, brand,
 }: {
   stats: PCStats | SectionStats;
   prevEntry: PrevEntry;
+  prevLabel?: string;
   advisor: string;
   tabType: TabType;
   title?: string;
@@ -242,6 +243,7 @@ function StatSection({
         <KPICard
           label="A tiempo" value={`${stats.pct_a_tiempo}%`} color={brand.kpiATime} icon="✅"
           prevValue={prevEntry ? `${prevEntry.aTime}%` : undefined}
+          prevLabel={prevLabel}
           improved={prevEntry ? calcImproved(stats.pct_a_tiempo, prevEntry.aTime, 'up') : undefined}
         />
         <KPICard
@@ -249,16 +251,19 @@ function StatSection({
           clickable={stats.cierre_tardio > 0}
           onClick={() => stats.cierre_tardio > 0 && setModalOpen(true)}
           prevValue={prevEntry ? `${prevEntry.tardio}%` : undefined}
+          prevLabel={prevLabel}
           improved={prevEntry ? calcImproved(stats.pct_tardio, prevEntry.tardio, 'down') : undefined}
         />
         <KPICard
           label="No realizadas" value={`${stats.pct_no_realizada}%`} color={brand.kpiNoRealizada} icon="⛔"
           prevValue={prevEntry ? `${prevEntry.noRealizada}%` : undefined}
+          prevLabel={prevLabel}
           improved={prevEntry ? calcImproved(stats.pct_no_realizada, prevEntry.noRealizada, 'down') : undefined}
         />
         <KPICard
           label="Mediana de cierre" value={mediaLabel} color={brand.kpiMediana} icon="🕐"
           prevValue={prevEntry?.mediana != null ? `${prevEntry.mediana.toFixed(1)}h` : undefined}
+          prevLabel={prevLabel}
           improved={prevEntry?.mediana != null && mediaHours != null
             ? calcImproved(mediaHours, prevEntry.mediana, 'down')
             : undefined}
@@ -344,6 +349,7 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, c
 
   const currentIdx = compareEntries.findIndex((e) => e.month === currentMonth);
   const prevEntry: PrevEntry = currentIdx > 0 ? compareEntries[currentIdx - 1] : null;
+  const prevLabel = currentIdx > 0 ? compareEntries[currentIdx - 1].label : undefined;
 
   return (
     <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-100" style={{ background: brand.panelBg }}>
@@ -383,7 +389,7 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, c
           <>
             <StatSection
               stats={(stats as HugoAdvisorStats).actividades}
-              prevEntry={prevEntry}
+              prevEntry={prevEntry} prevLabel={prevLabel}
               advisor={advisor} tabType={tabType} title="Actividades" brand={brand}
             />
             <div className="border-t border-gray-200 my-4" />
@@ -396,7 +402,7 @@ export default function AdvisorPanel({ advisor, stats, tabType, allMonthsData, c
         ) : (
           <StatSection
             stats={stats as PCStats | SectionStats}
-            prevEntry={prevEntry}
+            prevEntry={prevEntry} prevLabel={prevLabel}
             advisor={advisor} tabType={tabType} brand={brand}
           />
         )}
