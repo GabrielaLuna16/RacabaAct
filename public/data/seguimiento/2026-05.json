@@ -12,7 +12,8 @@
         "pct_tardio": 0,
         "pct_no_realizada": 0,
         "mediana_horas": 5.024999861111111,
-        "tardio_detail": []
+        "tardio_detail": [],
+        "no_realizada_detail": []
       },
       "llamadas": {
         "total": 201,
@@ -23,7 +24,8 @@
         "pct_tardio": 0,
         "pct_no_realizada": 0,
         "mediana_horas": 3.974999722222222,
-        "tardio_detail": []
+        "tardio_detail": [],
+        "no_realizada_detail": []
       }
     },
     "Gladys Favela": {
@@ -80,6 +82,26 @@
           "cerrado": "22/05/2026, 09:36",
           "turno": "fuera_horario",
           "tiempo_min": 390
+        }
+      ],
+      "no_realizada_detail": [
+        {
+          "contacto": "Rober Reyes",
+          "tarea": "Seguimiento 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000016609040",
+          "due_date": "03/05/2026"
+        },
+        {
+          "contacto": "Francisco Loaiza",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017708003",
+          "due_date": "15/05/2026"
+        },
+        {
+          "contacto": "Juan F Perez",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018891009",
+          "due_date": "31/05/2026"
         }
       ]
     },
@@ -138,7 +160,8 @@
           "turno": "fin_semana",
           "tiempo_min": 420
         }
-      ]
+      ],
+      "no_realizada_detail": []
     },
     "Indira Villegas": {
       "total": 105,
@@ -393,7 +416,8 @@
           "turno": "horario_laboral",
           "tiempo_min": 399
         }
-      ]
+      ],
+      "no_realizada_detail": []
     }
   }
 }
