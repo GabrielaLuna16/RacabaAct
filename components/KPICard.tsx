@@ -33,9 +33,6 @@ export default function KPICard({ label, value, color, onClick, clickable, icon,
           <span className="text-xs text-gray-400">vs {prevValue} periodo anterior</span>
         </div>
       )}
-      {clickable && (
-        <span className="text-xs text-gray-400 mt-1">Ver detalle →</span>
-      )}
     </div>
   );
 }
