@@ -10,7 +10,7 @@
       "pct_a_tiempo": 95,
       "pct_tardio": 5,
       "pct_no_realizada": 0,
-      "mediana_horas": 1.5916666666666668,
+      "mediana_horas": 1.8166666666666667,
       "tardio_detail": [
         {
           "contacto": "Jose de Dejesus Perez Leo",
@@ -37,7 +37,7 @@
           "creado": "01/05/2026, 16:21",
           "cerrado": "02/05/2026, 12:23",
           "turno": "horario_laboral",
-          "tiempo_min": 39
+          "tiempo_min": 152
         },
         {
           "contacto": "Judith Flores Ames",
@@ -68,7 +68,7 @@
       "pct_a_tiempo": 63,
       "pct_tardio": 37,
       "pct_no_realizada": 0,
-      "mediana_horas": 6.199999722222222,
+      "mediana_horas": 6.049999722222222,
       "tardio_detail": [
         {
           "contacto": "Letrushka Hernandez",
@@ -112,8 +112,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017005014",
           "creado": "02/05/2026, 22:47",
           "cerrado": "05/05/2026, 14:23",
-          "turno": "fin_semana",
-          "tiempo_min": 623
+          "turno": "fuera_horario",
+          "tiempo_min": 1013
         },
         {
           "contacto": "Bring Chateau",
@@ -144,7 +144,7 @@
       "pct_a_tiempo": 88,
       "pct_tardio": 12,
       "pct_no_realizada": 0,
-      "mediana_horas": 0.39999972222222224,
+      "mediana_horas": 0.5416666666666667,
       "tardio_detail": [
         {
           "contacto": "Timothy Mcgehee",
@@ -184,7 +184,7 @@
       "pct_a_tiempo": 94,
       "pct_tardio": 6,
       "pct_no_realizada": 0,
-      "mediana_horas": 0.3250001388888889,
+      "mediana_horas": 0.3333336111111111,
       "tardio_detail": [
         {
           "contacto": "Antonio López López",
@@ -192,8 +192,8 @@
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000017006003",
           "creado": "02/05/2026, 06:53",
           "cerrado": "04/05/2026, 15:32",
-          "turno": "fin_semana",
-          "tiempo_min": 332
+          "turno": "fuera_horario",
+          "tiempo_min": 1172
         },
         {
           "contacto": "Pepe Prado",
