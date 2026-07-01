@@ -87,15 +87,7 @@ function TurnoBadge({ turno }: { turno?: Turno }) {
 
 // ── Inline tardio table ──────────────────────────────────────────────────────
 
-const TURNO_FILTERS: { key: 'todos' | Turno; label: string }[] = [
-  { key: 'todos',           label: 'TODOS' },
-  { key: 'horario_laboral', label: 'HORARIO LABORAL' },
-  { key: 'fuera_horario',   label: 'FUERA DE HORARIO L-V' },
-  { key: 'fin_semana',      label: 'DÍA DE DESCANSO' },
-];
-
-function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | SectionStats; tabType: TabType; accentColor: string }) {
-  const [filter, setFilter] = useState<'todos' | Turno>('todos');
+function TardioInline({ stats, tabType }: { stats: PCStats | SectionStats; tabType: TabType }) {
   const [search, setSearch] = useState('');
 
   if (stats.cierre_tardio === 0) return null;
@@ -103,15 +95,13 @@ function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | Sectio
   type AnyRow = {
     contacto: string; tarea: string; tarea_url?: string;
     creado?: string; cerrado?: string; due_date?: string;
-    turno?: Turno; tiempo_min?: number;
+    tiempo_min?: number;
   };
 
   const rows = stats.tardio_detail as AnyRow[];
-  const filtered = rows.filter((r) => {
-    const matchFilter = filter === 'todos' || r.turno === filter;
-    const matchSearch = !search || r.contacto.toLowerCase().includes(search.toLowerCase());
-    return matchFilter && matchSearch;
-  });
+  const filtered = rows.filter((r) =>
+    !search || r.contacto.toLowerCase().includes(search.toLowerCase())
+  );
 
   const dateHeader = tabType === 'seguimiento' ? 'Fecha límite' : 'Creado';
   const timeHeader = tabType === 'seguimiento' ? 'Tiempo tarde' : 'Tiempo';
@@ -122,47 +112,28 @@ function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | Sectio
         Actividades con cierre tardío
       </p>
 
-      {/* Filtros + Búsqueda */}
-      <div className="flex flex-wrap items-center gap-2 mb-3">
-        {TURNO_FILTERS.map(({ key, label }) => {
-          const active = filter === key;
-          return (
-            <button
-              key={key}
-              onClick={() => setFilter(key)}
-              className="text-xs font-semibold px-3 py-1.5 rounded-full border transition-colors"
-              style={active
-                ? { background: accentColor, color: '#fff', borderColor: accentColor }
-                : { background: 'white', color: '#6b7280', borderColor: '#d1d5db' }
-              }
-            >
-              {label}
-            </button>
-          );
-        })}
+      <div className="flex justify-end mb-3">
         <input
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Buscar por nombre..."
-          className="ml-auto text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-300 min-w-[180px]"
+          className="text-sm border border-gray-200 rounded-lg px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-gray-300 min-w-[180px]"
         />
       </div>
 
-      {/* Tabla */}
       <div className="overflow-x-auto">
         {filtered.length === 0 ? (
           <p className="py-4 text-gray-400 text-center text-sm">Sin registros</p>
         ) : (
-          <table className="w-full text-sm min-w-[600px]">
+          <table className="w-full text-sm min-w-[500px]">
             <thead>
               <tr className="bg-gray-50 text-gray-500 text-left text-xs uppercase tracking-wide">
-                <th className="px-3 py-2 font-semibold rounded-tl">Contacto</th>
+                <th className="px-3 py-2 font-semibold">Contacto</th>
                 <th className="px-3 py-2 font-semibold">Tarea</th>
                 <th className="px-3 py-2 font-semibold">{dateHeader}</th>
                 <th className="px-3 py-2 font-semibold">Cerrado</th>
-                <th className="px-3 py-2 font-semibold">Turno</th>
-                <th className="px-3 py-2 font-semibold text-right rounded-tr">{timeHeader}</th>
+                <th className="px-3 py-2 font-semibold text-right">{timeHeader}</th>
               </tr>
             </thead>
             <tbody>
@@ -178,7 +149,6 @@ function TardioInline({ stats, tabType, accentColor }: { stats: PCStats | Sectio
                     {tabType === 'seguimiento' ? (r.due_date || '—') : (r.creado || '—')}
                   </td>
                   <td className="px-3 py-2 text-gray-500 whitespace-nowrap">{r.cerrado || '—'}</td>
-                  <td className="px-3 py-2"><TurnoBadge turno={r.turno} /></td>
                   <td className="px-3 py-2 text-right font-semibold text-gray-700 whitespace-nowrap">
                     {r.tiempo_min != null ? fmtTiempo(r.tiempo_min) : '—'}
                   </td>
