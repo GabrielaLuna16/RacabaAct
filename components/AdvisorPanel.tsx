@@ -404,7 +404,7 @@ function StatSection({
       </div>
 
       {/* Tardíos desplegados */}
-      <TardioInline stats={stats} tabType={tabType} accentColor={brand.kpiTardio} />
+      <TardioInline stats={stats} tabType={tabType} />
 
       {/* No realizadas desplegadas */}
       <NoRealizadaInline stats={stats} tabType={tabType} />
