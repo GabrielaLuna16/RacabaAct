@@ -1,0 +1,137 @@
+{
+  "month": "2026-06",
+  "label": "Junio 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "total": 66,
+      "a_tiempo": 65,
+      "cierre_tardio": 1,
+      "no_realizada": 0,
+      "pct_a_tiempo": 98,
+      "pct_tardio": 2,
+      "pct_no_realizada": 0,
+      "mediana_horas": 1.1166666666666667,
+      "tardio_detail": [
+        {
+          "contacto": "GILBERTO ESPINOZA",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020766017",
+          "creado": "28/06/2026, 13:14",
+          "cerrado": "29/06/2026, 18:22",
+          "turno": "horario_laboral",
+          "tiempo_min": 616
+        }
+      ],
+      "no_realizada_detail": []
+    },
+    "Gladys Favela": {
+      "total": 40,
+      "a_tiempo": 32,
+      "cierre_tardio": 8,
+      "no_realizada": 0,
+      "pct_a_tiempo": 80,
+      "pct_tardio": 20,
+      "pct_no_realizada": 0,
+      "mediana_horas": 2.3666666666666667,
+      "tardio_detail": [
+        {
+          "contacto": "Valeriia Parra",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020747010",
+          "creado": "27/06/2026, 03:46",
+          "cerrado": "28/06/2026, 10:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 393
+        },
+        {
+          "contacto": "Victor Barron",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000019523006",
+          "creado": "08/06/2026, 21:01",
+          "cerrado": "10/06/2026, 09:06",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Sabina Vazquez",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020270028",
+          "creado": "21/06/2026, 04:41",
+          "cerrado": "22/06/2026, 09:08",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Greck Tello",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020766010",
+          "creado": "26/06/2026, 20:09",
+          "cerrado": "28/06/2026, 10:25",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Rodrigo A. Avila Aguilar",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000019602003",
+          "creado": "09/06/2026, 11:29",
+          "cerrado": "10/06/2026, 09:13",
+          "turno": "horario_laboral",
+          "tiempo_min": 330
+        },
+        {
+          "contacto": "Lilia Nuñez",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020745022",
+          "creado": "27/06/2026, 16:41",
+          "cerrado": "28/06/2026, 10:30",
+          "turno": "horario_laboral",
+          "tiempo_min": 19
+        },
+        {
+          "contacto": "Gerardo Arreola",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020264025",
+          "creado": "19/06/2026, 15:58",
+          "cerrado": "20/06/2026, 14:45",
+          "turno": "horario_laboral",
+          "tiempo_min": 318
+        },
+        {
+          "contacto": "Yass Ramirez",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000019543004",
+          "creado": "08/06/2026, 19:05",
+          "cerrado": "10/06/2026, 09:03",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        }
+      ],
+      "no_realizada_detail": []
+    },
+    "Erick Suarez": {
+      "total": 22,
+      "a_tiempo": 22,
+      "cierre_tardio": 0,
+      "no_realizada": 0,
+      "pct_a_tiempo": 100,
+      "pct_tardio": 0,
+      "pct_no_realizada": 0,
+      "mediana_horas": 0.5833330555555556,
+      "tardio_detail": [],
+      "no_realizada_detail": []
+    },
+    "Indira Villegas": {
+      "total": 50,
+      "a_tiempo": 50,
+      "cierre_tardio": 0,
+      "no_realizada": 0,
+      "pct_a_tiempo": 100,
+      "pct_tardio": 0,
+      "pct_no_realizada": 0,
+      "mediana_horas": 0.1333336111111111,
+      "tardio_detail": [],
+      "no_realizada_detail": []
+    }
+  }
+}
