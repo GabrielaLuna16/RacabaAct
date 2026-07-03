@@ -113,11 +113,11 @@
     },
     "Gladys Favela": {
       "total": 70,
-      "a_tiempo": 55,
-      "cierre_tardio": 14,
+      "a_tiempo": 61,
+      "cierre_tardio": 8,
       "no_realizada": 1,
-      "pct_a_tiempo": 79,
-      "pct_tardio": 20,
+      "pct_a_tiempo": 87,
+      "pct_tardio": 11,
       "pct_no_realizada": 1,
       "mediana_horas": 6.5,
       "tardio_detail": [
@@ -129,24 +129,6 @@
           "cerrado": "28/06/2026, 10:50",
           "turno": "horario_laboral",
           "tiempo_min": 410
-        },
-        {
-          "contacto": "Bring Chateau",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018859004",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 09:52",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
-        },
-        {
-          "contacto": "Letrushka Hernandez",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018937010",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 09:53",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
         },
         {
           "contacto": "Dr. Raúl Zúñiga",
@@ -167,15 +149,6 @@
           "tiempo_min": 406
         },
         {
-          "contacto": "Francis Garcia Salazar",
-          "tarea": "Seguir Contactando",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000019060004",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 10:02",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
-        },
-        {
           "contacto": "Leonardo de la Mora",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018917009",
@@ -185,15 +158,6 @@
           "tiempo_min": 780
         },
         {
-          "contacto": "Skarlett Gro Landeros Cosmetóloga",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018870010",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 09:51",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
-        },
-        {
           "contacto": "Yadira Balaguer",
           "tarea": "Seguir Contactando",
           "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000020622003",
@@ -201,24 +165,6 @@
           "cerrado": "28/06/2026, 10:38",
           "turno": "horario_laboral",
           "tiempo_min": 399
-        },
-        {
-          "contacto": "Arlette Espinoza",
-          "tarea": "Seguir Contactando 3",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000018965004",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 09:51",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
-        },
-        {
-          "contacto": "Jose Molina",
-          "tarea": "Seguir Contactando",
-          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000019093003",
-          "due_date": "06/06/2026",
-          "cerrado": "07/06/2026, 09:59",
-          "turno": "fuera_horario",
-          "tiempo_min": 390
         },
         {
           "contacto": "Nadia Franchesca Pisano-Vazquez",
