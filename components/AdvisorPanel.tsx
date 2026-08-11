@@ -372,7 +372,7 @@ function StatSection({
         </div>
         <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
           <div className="h-full rounded-full transition-all duration-700"
-            style={{ width: `${stats.pct_a_tiempo}%`, background: brand.kpiATime }} />
+            style={{ width: `${stats.pct_a_tiempo}%`, background: '#008000' }} />
         </div>
       </div>
 
