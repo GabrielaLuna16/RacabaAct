@@ -1,0 +1,132 @@
+{
+  "month": "2026-07",
+  "label": "Julio 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "actividades": {
+        "total": 62,
+        "a_tiempo": 62,
+        "cierre_tardio": 0,
+        "no_realizada": 0,
+        "pct_a_tiempo": 100,
+        "pct_tardio": 0,
+        "pct_no_realizada": 0,
+        "mediana_horas": 1.3749998611111112,
+        "tardio_detail": [],
+        "no_realizada_detail": []
+      },
+      "llamadas": {
+        "total": 145,
+        "a_tiempo": 145,
+        "cierre_tardio": 0,
+        "no_realizada": 0,
+        "pct_a_tiempo": 100,
+        "pct_tardio": 0,
+        "pct_no_realizada": 0,
+        "mediana_horas": 1.0166666666666666,
+        "tardio_detail": [],
+        "no_realizada_detail": []
+      }
+    },
+    "Gladys Favela": {
+      "total": 114,
+      "a_tiempo": 107,
+      "cierre_tardio": 7,
+      "no_realizada": 0,
+      "pct_a_tiempo": 94,
+      "pct_tardio": 6,
+      "pct_no_realizada": 0,
+      "mediana_horas": 1.5416665277777777,
+      "tardio_detail": [
+        {
+          "contacto": "Raul De Oca",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000021260030",
+          "due_date": "07/07/2026",
+          "cerrado": "08/07/2026, 14:28",
+          "turno": "horario_laboral",
+          "tiempo_min": 628
+        },
+        {
+          "contacto": "Laura Elena Hurtado",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000022526005",
+          "due_date": "23/07/2026",
+          "cerrado": "04/08/2026, 12:36",
+          "turno": "horario_laboral",
+          "tiempo_min": 4026
+        },
+        {
+          "contacto": "VIVIANA X",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000021966008",
+          "due_date": "15/07/2026",
+          "cerrado": "04/08/2026, 12:16",
+          "turno": "horario_laboral",
+          "tiempo_min": 6736
+        },
+        {
+          "contacto": "Elyy Ja Jacinto Valdez",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023258003",
+          "due_date": "31/07/2026",
+          "cerrado": "01/08/2026, 11:13",
+          "turno": "horario_laboral",
+          "tiempo_min": 433
+        },
+        {
+          "contacto": "Michelle Iribe",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000021609007",
+          "due_date": "11/07/2026",
+          "cerrado": "12/07/2026, 09:23",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Alejandro Gamez",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000022176012",
+          "due_date": "18/07/2026",
+          "cerrado": "04/08/2026, 12:26",
+          "turno": "horario_laboral",
+          "tiempo_min": 5966
+        },
+        {
+          "contacto": "Michelle Iribe",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000021778026",
+          "due_date": "17/07/2026",
+          "cerrado": "18/07/2026, 09:46",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        }
+      ],
+      "no_realizada_detail": []
+    },
+    "Erick Suarez": {
+      "total": 83,
+      "a_tiempo": 83,
+      "cierre_tardio": 0,
+      "no_realizada": 0,
+      "pct_a_tiempo": 100,
+      "pct_tardio": 0,
+      "pct_no_realizada": 0,
+      "mediana_horas": 4.091666666666667,
+      "tardio_detail": [],
+      "no_realizada_detail": []
+    },
+    "Indira Villegas": {
+      "total": 99,
+      "a_tiempo": 99,
+      "cierre_tardio": 0,
+      "no_realizada": 0,
+      "pct_a_tiempo": 100,
+      "pct_tardio": 0,
+      "pct_no_realizada": 0,
+      "mediana_horas": 5.416666388888889,
+      "tardio_detail": [],
+      "no_realizada_detail": []
+    }
+  }
+}
