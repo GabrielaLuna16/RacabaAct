@@ -85,7 +85,7 @@ function getDueDate(created, advisor) {
   const restDay = REST_DAYS[advisor] ?? -1;
   let due = new Date(created);
   if (due.getUTCDay() === restDay) due = addDays(due, 1);
-  if (created.getUTCHours() >= 17) due = addDays(due, 1);
+  if (created.getUTCHours() >= 16) due = addDays(due, 1);
   if (due.getUTCDay() === restDay) due = addDays(due, 1);
   if (addDays(due, 1).getUTCDay() === restDay) due = addDays(due, 2);
   return due;

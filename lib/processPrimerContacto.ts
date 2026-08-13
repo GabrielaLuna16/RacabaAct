@@ -62,8 +62,8 @@ function getDueDate(created: Date, advisor: string, config: NonWorkingConfig): D
   if (due.getUTCDay() === restDay) {
     due = addDays(due, 1);
   }
-  // If created after 5 PM (UTC hours; Excel stores in UTC) → next day
-  if (created.getUTCHours() >= 17) {
+  // If created at or after 4 PM (UTC hours; Excel stores in UTC) → next day
+  if (created.getUTCHours() >= 16) {
     due = addDays(due, 1);
   }
   // If due_date falls on rest day → next day
