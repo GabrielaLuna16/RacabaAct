@@ -1,0 +1,161 @@
+{
+  "month": "2026-08",
+  "label": "Agosto 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "total": 43,
+      "a_tiempo": 39,
+      "cierre_tardio": 3,
+      "no_realizada": 1,
+      "pct_a_tiempo": 91,
+      "pct_tardio": 7,
+      "pct_no_realizada": 2,
+      "mediana_horas": 1.5666666666666667,
+      "tardio_detail": [
+        {
+          "contacto": "Araceli Sanchez Aceves",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024057008",
+          "creado": "08/08/2026, 20:26",
+          "cerrado": "10/08/2026, 13:02",
+          "turno": "fuera_horario",
+          "tiempo_min": 542
+        },
+        {
+          "contacto": "Alex Hernandez",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024060041",
+          "creado": "09/08/2026, 15:01",
+          "cerrado": "10/08/2026, 12:53",
+          "turno": "horario_laboral",
+          "tiempo_min": 263
+        },
+        {
+          "contacto": "Daniela Ruvalcaba",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024053019",
+          "creado": "08/08/2026, 22:34",
+          "cerrado": "10/08/2026, 13:14",
+          "turno": "fuera_horario",
+          "tiempo_min": 554
+        }
+      ],
+      "no_realizada_detail": [
+        {
+          "contacto": "Edwin Meza",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000025608013",
+          "creado": "31/08/2026, 19:52"
+        }
+      ]
+    },
+    "Gladys Favela": {
+      "total": 38,
+      "a_tiempo": 32,
+      "cierre_tardio": 5,
+      "no_realizada": 1,
+      "pct_a_tiempo": 84,
+      "pct_tardio": 13,
+      "pct_no_realizada": 3,
+      "mediana_horas": 1.2833333333333332,
+      "tardio_detail": [
+        {
+          "contacto": "Karina Gomez",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023408017",
+          "creado": "02/08/2026, 13:43",
+          "cerrado": "03/08/2026, 10:05",
+          "turno": "horario_laboral",
+          "tiempo_min": 197
+        },
+        {
+          "contacto": "Cesar Oropeza",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024056022",
+          "creado": "10/08/2026, 12:20",
+          "cerrado": "12/08/2026, 08:03",
+          "turno": "horario_laboral",
+          "tiempo_min": 670
+        },
+        {
+          "contacto": "Héctor Padilla",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024276005",
+          "creado": "11/08/2026, 12:24",
+          "cerrado": "12/08/2026, 07:49",
+          "turno": "horario_laboral",
+          "tiempo_min": 276
+        },
+        {
+          "contacto": "Joseph Kuo",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024237003",
+          "creado": "11/08/2026, 08:41",
+          "cerrado": "12/08/2026, 07:54",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Victor Esparza",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000025136004",
+          "creado": "21/08/2026, 18:24",
+          "cerrado": "24/08/2026, 09:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        }
+      ],
+      "no_realizada_detail": [
+        {
+          "contacto": "Eric Razo",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000025639003",
+          "creado": "31/08/2026, 12:39"
+        }
+      ]
+    },
+    "Erick Suarez": {
+      "total": 39,
+      "a_tiempo": 37,
+      "cierre_tardio": 2,
+      "no_realizada": 0,
+      "pct_a_tiempo": 95,
+      "pct_tardio": 5,
+      "pct_no_realizada": 0,
+      "mediana_horas": 0.06666666666666667,
+      "tardio_detail": [
+        {
+          "contacto": "Nilza Bustillo",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024589014",
+          "creado": "16/08/2026, 05:26",
+          "cerrado": "17/08/2026, 09:32",
+          "turno": "fuera_horario",
+          "tiempo_min": 420
+        },
+        {
+          "contacto": "Salvador Flores",
+          "tarea": "Actividad Contactar Inmediato",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024570016",
+          "creado": "15/08/2026, 22:47",
+          "cerrado": "17/08/2026, 09:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 420
+        }
+      ],
+      "no_realizada_detail": []
+    },
+    "Indira Villegas": {
+      "total": 25,
+      "a_tiempo": 25,
+      "cierre_tardio": 0,
+      "no_realizada": 0,
+      "pct_a_tiempo": 100,
+      "pct_tardio": 0,
+      "pct_no_realizada": 0,
+      "mediana_horas": 0.16666666666666666,
+      "tardio_detail": [],
+      "no_realizada_detail": []
+    }
+  }
+}
