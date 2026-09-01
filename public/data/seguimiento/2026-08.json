@@ -1,0 +1,348 @@
+{
+  "month": "2026-08",
+  "label": "Agosto 2026",
+  "advisors": {
+    "Hugo Cordova": {
+      "actividades": {
+        "total": 61,
+        "a_tiempo": 61,
+        "cierre_tardio": 0,
+        "no_realizada": 0,
+        "pct_a_tiempo": 100,
+        "pct_tardio": 0,
+        "pct_no_realizada": 0,
+        "mediana_horas": 1.1666666666666665,
+        "tardio_detail": [],
+        "no_realizada_detail": []
+      },
+      "llamadas": {
+        "total": 130,
+        "a_tiempo": 130,
+        "cierre_tardio": 0,
+        "no_realizada": 0,
+        "pct_a_tiempo": 100,
+        "pct_tardio": 0,
+        "pct_no_realizada": 0,
+        "mediana_horas": 1.6499997222222222,
+        "tardio_detail": [],
+        "no_realizada_detail": []
+      }
+    },
+    "Gladys Favela": {
+      "total": 103,
+      "a_tiempo": 83,
+      "cierre_tardio": 16,
+      "no_realizada": 4,
+      "pct_a_tiempo": 81,
+      "pct_tardio": 16,
+      "pct_no_realizada": 4,
+      "mediana_horas": 1.5833330555555556,
+      "tardio_detail": [
+        {
+          "contacto": "daniela verdin arcega",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023725003",
+          "due_date": "09/08/2026",
+          "cerrado": "12/08/2026, 09:48",
+          "turno": "fuera_horario",
+          "tiempo_min": 1170
+        },
+        {
+          "contacto": "Martín Plascencia",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023856003",
+          "due_date": "10/08/2026",
+          "cerrado": "12/08/2026, 09:46",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        },
+        {
+          "contacto": "Chava Robles",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023415012",
+          "due_date": "09/08/2026",
+          "cerrado": "12/08/2026, 09:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 1170
+        },
+        {
+          "contacto": "Karina Gomez",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023916005",
+          "due_date": "11/08/2026",
+          "cerrado": "12/08/2026, 09:42",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Samantha Trujillo",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024092014",
+          "due_date": "11/08/2026",
+          "cerrado": "12/08/2026, 10:04",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Alma Dueñes",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000025382009",
+          "due_date": "30/08/2026",
+          "cerrado": "31/08/2026, 10:21",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Rick Valentine",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023959004",
+          "due_date": "11/08/2026",
+          "cerrado": "12/08/2026, 09:49",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Alfredo Valdez",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000025013003",
+          "due_date": "22/08/2026",
+          "cerrado": "24/08/2026, 09:20",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        },
+        {
+          "contacto": "Juvenal Piza",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024919003",
+          "due_date": "23/08/2026",
+          "cerrado": "24/08/2026, 09:14",
+          "turno": "fuera_horario",
+          "tiempo_min": 390
+        },
+        {
+          "contacto": "Gabriel Varela",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023854003",
+          "due_date": "10/08/2026",
+          "cerrado": "12/08/2026, 09:40",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        },
+        {
+          "contacto": "Adair Danis",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024045004",
+          "due_date": "10/08/2026",
+          "cerrado": "12/08/2026, 10:02",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        },
+        {
+          "contacto": "Juan Daniel Hernandez",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023362008",
+          "due_date": "09/08/2026",
+          "cerrado": "12/08/2026, 09:32",
+          "turno": "fuera_horario",
+          "tiempo_min": 1170
+        },
+        {
+          "contacto": "Constructora Flores",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023744003",
+          "due_date": "11/08/2026",
+          "cerrado": "12/08/2026, 13:43",
+          "turno": "horario_laboral",
+          "tiempo_min": 583
+        },
+        {
+          "contacto": "Laura Elena Hurtado",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023757003",
+          "due_date": "09/08/2026",
+          "cerrado": "12/08/2026, 13:46",
+          "turno": "horario_laboral",
+          "tiempo_min": 1366
+        },
+        {
+          "contacto": "Luis Daniel Gonzalez Roman",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023469007",
+          "due_date": "09/08/2026",
+          "cerrado": "12/08/2026, 09:33",
+          "turno": "fuera_horario",
+          "tiempo_min": 1170
+        },
+        {
+          "contacto": "Emilio Ramos",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024042004",
+          "due_date": "10/08/2026",
+          "cerrado": "12/08/2026, 09:59",
+          "turno": "fuera_horario",
+          "tiempo_min": 780
+        }
+      ],
+      "no_realizada_detail": [
+        {
+          "contacto": "Ludy Orozco",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024574004",
+          "due_date": "17/08/2026"
+        },
+        {
+          "contacto": "Mirna Reyes",
+          "tarea": "Seguimiento",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024052019",
+          "due_date": "10/08/2026"
+        },
+        {
+          "contacto": "Alejandro Gamez",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023748003",
+          "due_date": "09/08/2026"
+        },
+        {
+          "contacto": "VIVIANA X",
+          "tarea": "Seguimiento 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023710005",
+          "due_date": "08/08/2026"
+        }
+      ]
+    },
+    "Erick Suarez": {
+      "total": 89,
+      "a_tiempo": 80,
+      "cierre_tardio": 9,
+      "no_realizada": 0,
+      "pct_a_tiempo": 90,
+      "pct_tardio": 10,
+      "pct_no_realizada": 0,
+      "mediana_horas": 1.2916665277777777,
+      "tardio_detail": [
+        {
+          "contacto": "Maria ramirez",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024057022",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:51",
+          "turno": "horario_laboral",
+          "tiempo_min": 952
+        },
+        {
+          "contacto": "Linda Ortiz",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024250004",
+          "due_date": "16/08/2026",
+          "cerrado": "17/08/2026, 09:53",
+          "turno": "fuera_horario",
+          "tiempo_min": 420
+        },
+        {
+          "contacto": "Pete Salgado",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024074039",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:50",
+          "turno": "horario_laboral",
+          "tiempo_min": 950
+        },
+        {
+          "contacto": "Kayvan Khatibi",
+          "tarea": "Seguir Contactando",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024391005",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 09:49",
+          "turno": "fuera_horario",
+          "tiempo_min": 840
+        },
+        {
+          "contacto": "Claudina Guido",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024251005",
+          "due_date": "16/08/2026",
+          "cerrado": "17/08/2026, 11:29",
+          "turno": "horario_laboral",
+          "tiempo_min": 509
+        },
+        {
+          "contacto": "Joaquin Arellano",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024106012",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:50",
+          "turno": "horario_laboral",
+          "tiempo_min": 950
+        },
+        {
+          "contacto": "Jesus Antonio Alatorre Sonoqui",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024053027",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:42",
+          "turno": "horario_laboral",
+          "tiempo_min": 942
+        },
+        {
+          "contacto": "Noemi Rodriguez",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024074033",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:37",
+          "turno": "horario_laboral",
+          "tiempo_min": 937
+        },
+        {
+          "contacto": "Francisco Quintero",
+          "tarea": "Seguir Contactando 2",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024036019",
+          "due_date": "15/08/2026",
+          "cerrado": "17/08/2026, 11:38",
+          "turno": "horario_laboral",
+          "tiempo_min": 938
+        }
+      ],
+      "no_realizada_detail": []
+    },
+    "Indira Villegas": {
+      "total": 74,
+      "a_tiempo": 71,
+      "cierre_tardio": 3,
+      "no_realizada": 0,
+      "pct_a_tiempo": 96,
+      "pct_tardio": 4,
+      "pct_no_realizada": 0,
+      "mediana_horas": 4.55,
+      "tardio_detail": [
+        {
+          "contacto": "Adriana Vazquez",
+          "tarea": "Seguimiento 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024430003",
+          "due_date": "19/08/2026",
+          "cerrado": "20/08/2026, 11:09",
+          "turno": "horario_laboral",
+          "tiempo_min": 489
+        },
+        {
+          "contacto": "Irene Martinez",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000023020010",
+          "due_date": "01/08/2026",
+          "cerrado": "02/08/2026, 13:31",
+          "turno": "horario_laboral",
+          "tiempo_min": 631
+        },
+        {
+          "contacto": "Jesus López",
+          "tarea": "Seguir Contactando 3",
+          "tarea_url": "https://crm.zoho.com/crm/org890924063/tab/Tasks/6857999000024288024",
+          "due_date": "19/08/2026",
+          "cerrado": "20/08/2026, 10:57",
+          "turno": "horario_laboral",
+          "tiempo_min": 478
+        }
+      ],
+      "no_realizada_detail": []
+    }
+  }
+}
